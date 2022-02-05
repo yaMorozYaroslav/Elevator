@@ -13,3 +13,66 @@ header h1{
   margin-left:  15px;
   font-weight:  300;
 }
+
+.search-area {
+  text-align:  center;
+  height: 50px;
+  width: 100%;
+}
+.search-area input{
+  border:  3px solid gray;
+  margin: 5px;
+  width: 400px;
+  border-radius: 10px;
+}
+.search-area input[type=text]{
+  padding:  10px;
+  
+}
+.search-area button{
+  background:  #343a40;
+  width:  150px;
+  height:40px;
+  border:  3px solid black;
+  color:  #fff ;
+  border-radius:  10px;
+}
+.list{
+  display:  grid;
+  margin:  20px 0 50px 0;
+  grid-template-columns:  repeat(4, 1fr);
+  grid-auto-rows:  1fr;
+  grid-gap: 1em;
+}
+.card-container{
+  width: 250px;
+  border: 1px solid black;
+  margin:  0 auto;
+  border-radius:  5px;
+  overflow:  hidden;
+}
+.card-container img{
+  height: 300px;
+  width: 200px;
+  margin-left: 10%;
+}
+.desc{
+  height: 130px;
+  padding:  10px;
+}
+.desc{
+  height:  130px;
+  padding:  10px;
+}
+ .desc h2{
+  font-size: 1em;
+  font-weight:  400;
+ }
+ .desk h3, p{
+  font-weight:  300;
+ }
+ .desk h3{
+  color:  white;
+  font-size: 1em;
+  padding:  10px 0 10px 0;
+ }
