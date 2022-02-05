@@ -9,7 +9,8 @@ const BookList=(props)=>{
                image={book.volumeInfo.imageLinks.thumbnail}
                title={book.volumeInfo.title}
                author={book.volumeInfo.authors}
-               published={book.volumeInfo.publishedDate}            
+               deskr={book.volumeInfo.description}
+               prev ={book.volumeInfo.previewLink}            
                          />
 		    })
 		  }
