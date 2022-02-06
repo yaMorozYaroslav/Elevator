@@ -7,7 +7,8 @@ class Books extends Component{
 		super(props);
 		this.state = {
 			books: [],
-			searchField: ''
+			searchField: '',
+			sort: ''
 		}
 	}
  searchBook=(e)=>{
@@ -17,17 +18,41 @@ class Books extends Component{
 		"https://www.googleapis.com/books/v1/volumes")
       .query({q:this.state.searchField})
       .then((data)=>{
-      	this.setState({books: [...data.body.items]});
+      	console.log(data);
+      	const cleanData = this.cleanData(data)
+      	this.setState({books: cleanData})
       })
 	}
 	handleSearch=(e)=>{
 		this.setState({searchField: e.target.value})
 	}
+	handleSort=(e)=>{
+		console.log(e.target.value);
+		this.setState({sort: e.target.value})
+	}
+	cleanData =(data)=>{
+		const cleanedData = data.body.items.map((book)=>{
+			if(book.volumeInfo.hasOwnProperty(
+				'authors')===false){
+				book.volumeInfo['authors']='unknown';
+			}
+			else if(book.volumeInfo.hasOwnProperty(
+				    'imageLinks')===false){
+				book.volumeInfo['imageLinks']={thumbnail: 'https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101027/112815900-no-image-available-icon-flat-vector.jpg?ver=6'}
+			}
+			return book;
+		})
+		return cleanedData;
+	}
 	render(){
+		const sortedBooks = this.state.books.sort((a,b)=>{
+			
+		})
 		return(
 			<div>
 			 <SearchArea searchBook={this.searchBook}
-			             handleSearch={this.handleSearch}/>
+			             handleSearch={this.handleSearch}
+			             handleSort={this.handleSort}/>
 			 <BookList books={this.state.books}/>
 			</div>
 			);
