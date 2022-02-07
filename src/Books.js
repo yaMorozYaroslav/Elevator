@@ -40,6 +40,10 @@ class Books extends Component{
 				    'imageLinks')===false){
 				book.volumeInfo['imageLinks']={thumbnail: 'https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101027/112815900-no-image-available-icon-flat-vector.jpg?ver=6'}
 			}
+			else if(book.volumeInfo.hasOwnProperty(
+				'authors')===false){
+				book.volumeInfo['authors']='unknown';
+			}
 			return book;
 		})
 		return cleanedData;

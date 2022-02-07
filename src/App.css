@@ -22,29 +22,34 @@ header h1{
 .search-area input{
   border:  3px solid maroon;
   margin: 5px;
-  width: 400px;
+  height: 45px;
+  width: 500px;
   border-radius: 10px;
 }
 .search-area input[type=text]{
   padding:  10px;
+  font-size: 17px;
   
 }
 .search-area button{
-  background:  #343a40;
+  background:  maroon;
   width:  150px;
-  height:40px;
-  border:  3px solid black;
+  height:42px;
+  border:  1px solid black;
   color:  #fff ;
   border-radius:  10px;
+  font-size:  17px;
 }
 select{
-  background:  green;
+  background:  maroon;
   width: 150px;
   height: 40px;
-  border: 3px solid black;
+  border: 1px solid black;
   color:  white;
   border-radius: 10px;
   text-align:  center;
+  font-size:  17px;
+  margin-left: 5px;
  }
 .list{
   display:  grid;
@@ -68,17 +73,20 @@ select{
 .desc{
   height:  130px;
   padding:  10px;
-  font-size:  14px;
+  font-size:  13px;
 }
  .desc h2{
   color:  black;
-  font-size:  14px;
+  font-size:  17px;
 
  }
  .desk h3, p{
-  font-size:  13px;
+  font-size:  14px;
  }
 @media only screen and (max-width: 900px){
+  .card-container {
+  margin:  40px;
+ }
 .list{
   display:  grid;
   margin:  20px 0 50px 0;
@@ -86,13 +94,19 @@ select{
   grid-auto-rows:  1fr;
   grid-gap: 1em;
 }
+.search-area input{
+  width: 400px;
+}
 }
 @media only screen and (max-width:  600px){
+  select{
+    width: 100px;
+  }
   .search-area input{
   width: 300px; 
 }
    .card-container {
-  margin:  40px;
+  margin:  30px;
  }
    .list{
   display:  grid;
