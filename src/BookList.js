@@ -10,7 +10,8 @@ const BookList=(props)=>{
                title={book.volumeInfo.title}
                author={book.volumeInfo.authors}
                deskr={book.volumeInfo.description}
-               prev ={book.volumeInfo.previewLink}            
+               prev ={book.volumeInfo.previewLink} 
+                         
                          />
 		    })
 		  }

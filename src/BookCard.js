@@ -8,8 +8,7 @@ const BookCard = (props)=>{
 		 <div className="desc">
 		    <h2>{props.title}</h2>
 		    <h3>Author: {props.author}</h3>
-		    <p>Published Data:{
-props.published === '0000'?'Not available':props.published}</p>
+		    <p>Published Data:{props.published}</p>
 		    <p>Description: {props.deskr}</p>
 	  </div>
 	</div>
