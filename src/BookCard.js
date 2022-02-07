@@ -7,9 +7,10 @@ const BookCard = (props)=>{
          </a>
 		 <div className="desc">
 		    <h2>{props.title}</h2>
-		    <h3>{props.author}</h3>
-		    <p>{props.published}</p>
-		    <p>{props.deskr}</p>
+		    <h3>Author: {props.author}</h3>
+		    <p>Published Data:{
+props.published === '0000'?'Not available':props.published}</p>
+		    <p>Description: {props.deskr}</p>
 	  </div>
 	</div>
 	)
