@@ -1,6 +1,10 @@
 import React from 'react';
-import PersonList from './PersonList.js';
+import axios from 'axios';
+const baseUrl = 'https://hacker-news.firebaseio.com/v0/newstories.json';
 
-export function App(){
-	return <PersonList/>
+
+export const App = ()=>{
+	axios.get(baseUrl).then((response)=>{console.log(response.data)})
+    return <p>Fetch</p>;
 }
+

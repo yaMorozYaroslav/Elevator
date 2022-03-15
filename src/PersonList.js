@@ -1,22 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class PersonList extends React.Component{
-  state = {
-    stories: [],
-  };
-  componentDidMount(){
-    axios.get(`https://hacker-news.firebaseio.com/v0/newstories.json`)
-      .then(res => {console.log(res); 
-      this.setState({stories: res.data});
-    });
-  }
+const baseUrl = 'https://hacker-news.firebaseio.com/v0/newstories.json';
 
-render(){
-  return ( <ul>{this.state.stories.map(story => (
-               <li key={story.id}>{story.title}</li>
-                ))}
-         </ul>
-         );
-}
+export const getStoryIds = async()=>{
+  const result = await
+        axios
+        .get(baseUrl)
+        .then(({data})=>data);
+
+        return result;
 }
