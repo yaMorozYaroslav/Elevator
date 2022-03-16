@@ -1,10 +1,13 @@
 import React from 'react';
-import axios from 'axios';
-const baseUrl = 'https://hacker-news.firebaseio.com/v0/newstories.json';
 
+import {getStoryIds} from './hnApi';
 
-export const App = ()=>{
-	axios.get(baseUrl).then((response)=>{console.log(response.data)})
-    return <p>Fetch</p>;
-}
+export const App=()=> {
+	const [storyIds, setStoryIds] = React.useState([]);
+   
+   React.useEffect(()=>{
+   	getStoryIds().then(stories=>setStoryIds(stories));
+   }, []);
 
+	return <p>{JSON.stringify(storyIds)}</p>;
+};
