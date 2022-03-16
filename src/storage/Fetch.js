@@ -1,18 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 
-const fetched = async() =>{
-    const result = await axios.get('https://hacker-news.firebaseio.com/v0/newstories.json')
-                              .then(({data})=>data);
-      return result;
+const fetching = async () => {
+   const toForget = await axios.get('https://hacker-news.firebaseio.com/v0//item/8863.json').then(({data})=>data);
+   return toForget;
 }
 
 export function Fetch(){
-    const [place, setFetched] = React.useState([]);
-    
-    React.useEffect(()=>{
-        fetched().then(data=>setFetched(data));
-    }, []);
+    const [place, setData] = React.useState([]);
 
+    React.useEffect(()=>{
+    fetching().then(loads=>setData(loads));
+  }, []);
     return <p>{JSON.stringify(place)}</p>
 }
