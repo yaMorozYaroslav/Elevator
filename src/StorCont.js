@@ -1,12 +1,11 @@
 import React from 'react';
-import {getStoryIds, getStory} from './hnApi.js';
+import {getSrori, getSroris} from './hnApi.js';
 
 export const StoriesContainer = () => {
 	const [storyIds, setStoryIds] = React.useState([]);
 
 	React.useEffect(()=>{
-		getStoryIds().then(data=>setStoryIds(data));
-		getStory(30702503).then(some=>console.log(some));
+		getSroris().then(data=>setStoryIds(data));
 	}, []);
 
 	return <p>{JSON.stringify(storyIds)}</p>;
