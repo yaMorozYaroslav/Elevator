@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseUrl = 'https://hacker-news.firebaseio.com/v0/';
 const storyUrl = `${baseUrl}item/`;
-const newStoriesUrl = `${baseUrl}/newnstories.json`;
+const newStoriesUrl = `${baseUrl}/newstories.json`;
 
 export const getSrori = async storyId => {
 	const result = await axios.get(`${storyUrl+storyId}.json`)
