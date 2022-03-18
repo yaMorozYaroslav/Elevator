@@ -1,8 +1,10 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
+import {File} from './storage/File';
 
 export function App(){
-  const handleFailure = (result) => {
+	return <File/>
+  /*const handleFailure = (result) => {
   	alert(result);
   };
    const handleLogin = (googleData) => {
@@ -23,5 +25,5 @@ export function App(){
          </div>
         </header>
         </div>
-		)
+		)*/
 }
