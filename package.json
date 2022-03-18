@@ -1,90 +1,26 @@
 {
-
-  "name": "my-axios",
-
-  "version": "0.1.0",
-
+  "name": "backend-js-express",
+  "version": "1.0.0",
+  "description": "Elevators code challenge - backend",
   "private": true,
-
-  "engines": {
-
-    "node": "16.11.0"
-
-  },
-
-  "dependencies": {
-
-    "@testing-library/jest-dom": "^5.16.2",
-
-    "@testing-library/react": "^12.1.2",
-
-    "@testing-library/user-event": "^13.5.0",
-
-    "react": "^17.0.2",
-
-    "react-dom": "^17.0.2",
-
-    "react-scripts": "5.0.0",
-
-    "web-vitals": "^2.1.4"
-
-  },
-
+  "main": "src/index.js",
   "scripts": {
-
-    "start": "react-scripts start",
-
-    "build": "react-scripts build",
-
-    "test": "react-scripts test",
-
-    "eject": "react-scripts eject"
-
+    "dev": "nodemon --watch src -e js,ejs --exec npm run start",
+    "start": "node .",
+    "test": "mocha --recursive './src/**/*.spec.js'",
+    "test:watch": "mocha --recursive './src/**/*.spec.js' --watch"
   },
-
-  "eslintConfig": {
-
-    "extends": [
-
-      "react-app",
-
-      "react-app/jest"
-
-    ]
-
+  "author": "Fortum",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-sse": "^0.5.3"
   },
-
-  "browserslist": {
-
-    "production": [
-
-      ">0.2%",
-
-      "not dead",
-
-      "not op_mini all"
-
-    ],
-
-    "development": [
-
-      "last 1 chrome version",
-
-      "last 1 firefox version",
-
-      "last 1 safari version"
-
-    ]
-
-  },
-
   "devDependencies": {
-
-    "axios": "^0.26.1",
-
-    "react-google-login": "^5.2.2"
-
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.3"
   }
-
 }
-
