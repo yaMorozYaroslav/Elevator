@@ -5,14 +5,17 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon --watch src -e js,ejs --exec npm run start",
+    "client": "npm start --prefix client",
+    "server": "nodemon --watch src -e js,ejs --exec npm run start",
     "start": "node .",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "mocha --recursive './src/**/*.spec.js'",
     "test:watch": "mocha --recursive './src/**/*.spec.js' --watch"
   },
   "author": "Fortum",
   "license": "UNLICENSED",
   "dependencies": {
+    "concurrently": "^7.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-sse": "^0.5.3"
