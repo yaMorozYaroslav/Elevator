@@ -1,18 +1,33 @@
 import React from 'react';
+import Button from './components/Button';
+import Container from './components/Container';
+import liftData from './data';
+import Lift from './components/Lift';
+import './App.css';
 
-import {fetcher} from './Res.js';
-export function App(){
-  const [place, setPlace] = React.useState([]);
-  React.useEffect(()=>{
- fetcher().then(response=>setPlace(response));
-  }, [])
-  return <p>{JSON.stringify(place)}</p>
+const App = () => {
+  return(
+   <div className="flex">
+     <div className="main-space">
+       <div className="btn-holder">
+         {
+          liftData.map((lift, idx)=>(
+            <Button key={idx} 
+                name={lift.name} 
+                value={lift.name}/>
+                ))
+             }
+         </div>
+         <div className="ctn-holder">
+            {liftData.map((container, idx)=> (
+              <Container key={idx}/>
+              ))
+            }
+            <Lift />
+          </div>
+         </div>
+        </div>
+    )
 }
+export default App;
 
-export function Depp(){
-  const [mess, setMess] = React.useState([]);
-  React.useEffect(()=>{
-  axios.put("http://localhost:8080/floor/1")
-       .then(response=>setMess(response.data.mes))
-  }) 
-}
