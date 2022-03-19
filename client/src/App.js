@@ -1,14 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-const baseUrl = 'http://localhost:8080/';
-const 
 
-
+const fetcher = async() =>{
+  const result = await axios.get("http://localhost:8080/elevators")
+                            .then(({data})=>data);
+    return result;
+}
 export function App(){
-  const [place, setElev] = React.useState([]);
+  const [place, setPlace] = React.useState([]);
   React.useEffect(()=>{
-    axios.put('http://localhost:8080/floor/3')
-         .then(response=>setElev(response.data.place))
-  })
+ fetcher().then(response=>setPlace(response));
+  }, [])
   return <p>{JSON.stringify(place)}</p>
 }
