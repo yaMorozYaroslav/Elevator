@@ -1,33 +1,14 @@
-import React from 'react';
-import Button from './components/Button/Button';
-import Container from './components/Container/Container';
-import liftData from './data';
-import Lift from './components/Lift/Lift';
-import './App.css';
+import {Provider} from 'react-redux';
+import configureStore from './store/configurestore';
+import Posts from './store/components/posts';
+//import "./App.css";
+const store = configureStore()
 
-export const App = () => {
+function App(){
   return(
-   <div className="flex">
-     <div className="main-space">
-       <div className="btn-holder">
-         {
-          liftData.map((lift, idx)=>(
-            <Button key={idx} 
-                name={lift.name} 
-                value={lift.name}/>
-                ))
-             }
-         </div>
-         <div className="ctn-holder">
-            {liftData.map((container, idx)=> (
-              <Container key={idx}/>
-              ))
-            }
-            <Lift />
-          </div>
-         </div>
-        </div>
-    )
+   <Provider store={store}>
+      <Posts/>
+    </Provider>
+    );
 }
 export default App;
-
