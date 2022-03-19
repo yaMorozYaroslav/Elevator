@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from './components/Button';
-import Container from './components/Container';
+import Button from './components/Button/Button';
+import Container from './components/Container/Container';
 import liftData from './data';
-import Lift from './components/Lift';
+import Lift from './components/Lift/Lift';
 import './App.css';
 
-const App = () => {
+export const App = () => {
   return(
    <div className="flex">
      <div className="main-space">
