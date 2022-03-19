@@ -1,14 +1,10 @@
-import {Provider} from 'react-redux';
-import configureStore from './store/configurestore';
-import Posts from './store/components/posts';
-//import "./App.css";
-const store = configureStore()
-
-function App(){
-  return(
-   <Provider store={store}>
-      <Posts/>
-    </Provider>
-    );
+import React from 'react';
+import {Contr} from './Contr/Contr'
+import {fetcher} from './Res.js';
+export function App(){
+  const [place, setPlace] = React.useState([]);
+  React.useEffect(()=>{
+ fetcher().then(response=>setPlace(response));
+  }, [place])
+  return (<><p>{JSON.stringify(place)}</p><Contr/></>);
 }
-export default App;
