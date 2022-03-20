@@ -7,7 +7,7 @@ export function Depp(){
 	     .then((res)=>console.log(res));
 	axios.put("http://localhost:8080/floor/5")
 	     .then((res)=>console.log(res));
-	axios.put("http://localhost:8080/floor/3")
+	axios.put("http://localhost:8080/floor/5")
 	     .then((res)=>console.log(res));
 	     },[])
 	return <p></p>
