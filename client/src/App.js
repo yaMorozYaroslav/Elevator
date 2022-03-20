@@ -1,5 +1,5 @@
 import React from 'react';
-import {Contr} from './Contr/Contr'
+import {Contr} from './components/Contr/Contr'
 import {fetcher} from './Res.js';
 export function App(){
   const [place, setPlace] = React.useState([]);

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './Contr.css';
 //import {numbers} from './numbers';
 
 export function Contr(){
@@ -20,7 +21,7 @@ React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/"+active)
 	                           .then(res=>setMove(res));
 }, [active])
-	  return (<>
+	  return (<dev>
 	  <button onClick={zero}>G</button>
 	  <button onClick={one}>1</button>
 	  <button onClick={two}>2</button>
@@ -30,9 +31,7 @@ React.useEffect(()=>{
 	  <button onClick={six}>6</button>
 	  <button onClick={seven}>7</button>
 	  <button onClick={eight}>8</button>
-	  <button onClick={nine}>9</button>
-	  
-
-	  </>);
+	  <button onClick={nine}>9</button>	 
+ </dev>);
 
 }
