@@ -11,7 +11,7 @@ const B0=()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/0")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 
 	     },[tick]); 
  return <button onClick={handTick}>G</button>}
@@ -20,7 +20,7 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/1")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>1</button>}
@@ -29,7 +29,7 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/2")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>2</button>}
@@ -38,7 +38,7 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/3")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>3</button>}
@@ -47,7 +47,7 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/4")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>4</button>}
@@ -56,7 +56,7 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/5")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>5</button>}
@@ -65,7 +65,7 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/6")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>6</button>};
@@ -74,7 +74,7 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/7")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>7</button>}
@@ -83,7 +83,7 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/8")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>8</button>}
@@ -92,9 +92,9 @@ React.useEffect(()=>{
 const [tick, handTick] = Buston();
 React.useEffect(()=>{
 	axios.put("http://localhost:8080/floor/9")
-	     .then((res)=>console.log(res));
+	     .then((res)=>res);
 	
 	     },[tick]); 
  return <button onClick={handTick}>9</button>}
 
- export const Control =()=>{return(<><B0/> <B1/> <B2/> <B3/> <B4/> <B5/> <B6/> <B7/> <B8/> <B9/></>)}
+ export const Buttons =()=>{return(<><B0/> <B1/> <B2/> <B3/> <B4/> <B5/> <B6/> <B7/> <B8/> <B9/></>)}
