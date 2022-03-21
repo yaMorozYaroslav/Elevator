@@ -1,16 +1,14 @@
 import React from 'react';
 import {Contr} from './components/Contr/Contr'
-import {Button} from './Depp.js';
+import {B0,B1,B2,B3,B4,B5,B6,B7,B8,B9} from './Buttons.js';
 import {fetcher} from './Res.js';
 export function App(){
   const [place, setPlace] = React.useState([]);
-  const [click, setClick] = React.useState(false);
-  const handClick = () => setClick(!click);
   React.useEffect(()=>{
  fetcher().then(response=>setPlace(response));
   }, [place])
   return (<><p>{JSON.stringify(place)}</p>
-            <button onClick={handClick}>Click</button>
          
-            <Button/></>);
+          <B0/> <B1/> <B2/> <B3/> <B4/> <B5/> <B6/> <B7/> <B8/> <B9/> 
+            </>);
 }
