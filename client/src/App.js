@@ -1,5 +1,6 @@
 import React from 'react';
 import {Contr} from './components/Contr/Contr'
+import {Button} from './Depp.js';
 import {fetcher} from './Res.js';
 export function App(){
   const [place, setPlace] = React.useState([]);
@@ -10,5 +11,6 @@ export function App(){
   }, [place])
   return (<><p>{JSON.stringify(place)}</p>
             <button onClick={handClick}>Click</button>
-            <Contr/></>);
+         
+            <Button/></>);
 }
