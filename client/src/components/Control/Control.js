@@ -22,6 +22,7 @@ return <>
         {place.state == "down"
              ?", and we're miving down to "+place.targetFloor:null}
              </p>
+         <div style={place.floor==='1'?'backgroundColor:black, width:300px':null}>null</div>
         </>
 
 }
