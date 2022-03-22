@@ -1,12 +1,12 @@
 import React from 'react';
 import {Buttons} from './Buttons.js';
 import {Control} from './components/Control/Control';
-import {Res} from './Res.js';
+import {Engine} from './Engine/Engine';
 export function App(){
   return (<>
   	     <Control/>
          <Buttons/>
-         <Res/>
+         <Engine/>
           
             </>);
 }

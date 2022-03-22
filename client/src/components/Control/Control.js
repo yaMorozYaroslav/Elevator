@@ -23,6 +23,7 @@ return <>
         {place.state == "down"
              ?", and we're miving down to "+place.targetFloor:null}
              </p>
+         <div>{place.floor == "0"?<button>Groun</button>:null}</div>
         </>
 
 }
