@@ -1,47 +1,18 @@
 import React from 'react';
 import axios from 'axios';
-import styles from './control.module.css';
+import './control.css';
+import {Elv1} from '../Elv1/Elv1';
+import {Elv2} from '../Elv2/Elv2';
+import {Elv3} from '../Elv3/Elv3';
 
 export const axioser = async () =>{
      const result = await axios.get("http://localhost:8080/elevators").then(({data})=>data);
      return result;
  }
 
- const Elv2 =()=>{
-	const [place, setData] = React.useState([]);
-React.useEffect(()=>{
-	axioser().then(data=>setData(data[1]));
-
-},[place])
-
-
-return <>
-     <p></p>
-     <p>Current floor {place.floor} 
-        {place.state == "up"
-             ?", and we're moving up to "+place.targetFloor:null}  
-        {place.state == "down"
-             ?", and we're miving down to "+place.targetFloor:null}
-             </p>
-     </>
-
-}
- const Elv3 =()=>{
-	const [place, setData] = React.useState([]);
-React.useEffect(()=>{
-	axioser().then(data=>setData(data[2]));
-
-},[place])
-
-
-return <>
-       <p>Current floor {place.floor} 
-        {place.state == "up"
-             ?", and we're moving up to "+place.targetFloor:null}  
-        {place.state == "down"
-             ?", and we're miving down to "+place.targetFloor:null}
-             </p>
-        </>
-
-}
-export const Control=()=>{return(<><Elv2/><Elv3/></>)}
+ 
+export const Control=()=>{return(<div className="container">
+         <div className="element"><Elv1/></div>
+         <div className="element"><Elv2/></div>
+         <div className="element"><Elv3/></div>
+                        </div>)}

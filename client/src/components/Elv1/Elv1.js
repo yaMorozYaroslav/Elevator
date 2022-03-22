@@ -18,7 +18,7 @@ return <>
              ?", and we're miving down to "+place.targetFloor:null}
              </p>
 
-         <div className="container">
+         <div className="contain">
 
                {place.floor == "0"
                ?<div className="one"/>

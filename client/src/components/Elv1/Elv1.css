@@ -1,14 +1,14 @@
-.container{display: flex}
+.contain{display: inline;}
 .one{
 	background: black;
     width: 100px;
-    height: 100px;
+    height: 50px;
 
    }
 .second{
 	background: green;
 	width: 100px;
-	height: 100px;
+	height: 50px;
 	transition: 1s;
 
 }
