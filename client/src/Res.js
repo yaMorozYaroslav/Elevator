@@ -5,14 +5,3 @@ export const fetcher = async() =>{
                             .then(({data})=>data);
     return result;
 }
-//Ex-app
-/*import React from 'react';
-import {Depp} from './Depp';
-import {fetcher} from './Res.js';
-export function App(){
-  const [place, setPlace] = React.useState([]);
-  React.useEffect(()=>{
- fetcher().then(response=>setPlace(response));
-  }, [place])
-  return (<><p>{JSON.stringify(place)}</p><Depp/></>);
-}*/

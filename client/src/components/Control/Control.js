@@ -7,28 +7,59 @@ const axioser = async () =>{
  }
 
 
-export const Elv1 =()=>{
+ const Elv1 =()=>{
 	const [place, setData] = React.useState([]);
 React.useEffect(()=>{
 	axioser().then(data=>setData(data[0]));
+     
+},[place])
+
+
+return <>
+       <p>Current floor {place.floor} 
+        {place.state == "up"
+             ?", and we're moving up to "+place.targetFloor:null}  
+        {place.state == "down"
+             ?", and we're miving down to "+place.targetFloor:null}
+             </p>
+        </>
+
+}
+ const Elv2 =()=>{
+	const [place, setData] = React.useState([]);
+React.useEffect(()=>{
+	axioser().then(data=>setData(data[1]));
 
 },[place])
 
 
-return <p>Num {JSON.stringify(place).slice(21,22)}</p>
+return <>
+     <p></p>
+     <p>Current floor {place.floor} 
+        {place.state == "up"
+             ?", and we're moving up to "+place.targetFloor:null}  
+        {place.state == "down"
+             ?", and we're miving down to "+place.targetFloor:null}
+             </p>
+     </>
 
 }
-
-export const Elv2 =()=>{
+ const Elv3 =()=>{
 	const [place, setData] = React.useState([]);
 React.useEffect(()=>{
-axioser().then(data=>setData(data[1]));},[place])
-return <p>{JSON.stringify(place).slice(21,22)}</p>
-}
+	axioser().then(data=>setData(data[2]));
 
-export const Elv3 =()=>{
-	const [place, setData] = React.useState([]);
-React.useEffect(()=>{
-axioser().then(data=>setData(data[2]));},[place])
-return <p>{JSON.stringify(place).slice(21,22)}</p>
+},[place])
+
+
+return <>
+       <p>Current floor {place.floor} 
+        {place.state == "up"
+             ?", and we're moving up to "+place.targetFloor:null}  
+        {place.state == "down"
+             ?", and we're miving down to "+place.targetFloor:null}
+             </p>
+        </>
+
 }
+export const Control=()=>{return(<><Elv1/><Elv2/><Elv3/></>)}
