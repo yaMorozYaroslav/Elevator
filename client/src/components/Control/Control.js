@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import styles from './control.module.css';
 
 const axioser = async () =>{
      const result = await axios.get("http://localhost:8080/elevators").then(({data})=>data);
@@ -22,7 +23,7 @@ return <>
         {place.state == "down"
              ?", and we're miving down to "+place.targetFloor:null}
              </p>
-         <div style={place.floor==='1'?'backgroundColor:black, width:300px':null}>null</div>
+         <div className={place.floor=='1'?styles.one:null}>null</div>
         </>
 
 }
