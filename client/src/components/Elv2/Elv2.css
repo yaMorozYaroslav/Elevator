@@ -1,0 +1,14 @@
+.container{display: flex}
+.one{
+	background: black;
+    width: 100px;
+    height: 100px;
+    
+   }
+.second{
+	background: green;
+	width: 100px;
+	height: 100px;
+	transition: 1s;
+
+}
