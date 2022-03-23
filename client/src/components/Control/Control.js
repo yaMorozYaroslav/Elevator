@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import './control.css';
-import {Elv1} from '../Elv1/Elv1';
-import {Elv2} from '../Elv2/Elv2';
-import {Elv3} from '../Elv3/Elv3';
+import {Elv1} from '../Elvs/Elv1';
+import {Elv2} from '../Elvs/Elv2';
+import {Elv3} from '../Elvs/Elv3';
 
 export const axioser = async () =>{
      const result = await axios.get("http://localhost:8080/elevators").then(({data})=>data);

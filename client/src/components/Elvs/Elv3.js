@@ -1,7 +1,7 @@
 import React from 'react';
 import {axioser} from '../Control/Control';
-import './Elv3.css';
-import Man from '../Man.png';
+import './Elvs.css';
+import Man from './Man.png';
 
 export const Elv3 =()=>{
 	const [place, setData] = React.useState([]);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Buttons} from './Buttons/Buttons.js';
+import {Buttons} from './components/Buttons/Buttons.js';
 import {Control} from './components/Control/Control';
 import {Build} from './components/Build';
 import {Intro} from './components/Intro/Intro';

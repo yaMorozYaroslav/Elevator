@@ -1,12 +1,13 @@
 .contain{display: inline};
+.second{
+	background: green;
+}
 .one{
 	background: black;
+	border: solid 1px white;
 	width: 100px;
 	height: 50px;
-	
-
 }
-
 img{
 	width: 100px;
 	heigth: 100px;
