@@ -14,7 +14,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 
 	     },[tick]); 
- return <button onClick={handTick}>G</button>}
+ return <button onClick={handTick}>1</button>}
 
  const B1=()=>{
 const [tick, handTick] = Buston();
@@ -23,7 +23,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>1</button>}
+ return <button onClick={handTick}>2</button>}
 
   const B2=()=>{
 const [tick, handTick] = Buston();
@@ -32,7 +32,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>2</button>}
+ return <button onClick={handTick}>3</button>}
 
   const B3=()=>{
 const [tick, handTick] = Buston();
@@ -41,7 +41,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>3</button>}
+ return <button onClick={handTick}>4</button>}
 
   const B4=()=>{
 const [tick, handTick] = Buston();
@@ -50,7 +50,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>4</button>}
+ return <button onClick={handTick}>5</button>}
 
   const B5=()=>{
 const [tick, handTick] = Buston();
@@ -59,7 +59,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>5</button>}
+ return <button onClick={handTick}>6</button>}
 
   const B6 =()=>{
 const [tick, handTick] = Buston();
@@ -68,7 +68,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>6</button>};
+ return <button onClick={handTick}>7</button>};
 
   const B7=()=>{
 const [tick, handTick] = Buston();
@@ -77,7 +77,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>7</button>}
+ return <button onClick={handTick}>8</button>}
 
   export const B8=()=>{
 const [tick, handTick] = Buston();
@@ -86,7 +86,7 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>8</button>}
+ return <button onClick={handTick}>9</button>}
 
    const B9=()=>{
 const [tick, handTick] = Buston();
@@ -95,6 +95,6 @@ React.useEffect(()=>{
 	     .then((res)=>res);
 	
 	     },[tick]); 
- return <button onClick={handTick}>9</button>}
+ return <button onClick={handTick}>10</button>}
 
  export const Buttons =()=>{return(<><B0/> <B1/> <B2/> <B3/> <B4/> <B5/> <B6/> <B7/> <B8/> <B9/></>)}
