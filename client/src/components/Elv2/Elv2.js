@@ -15,13 +15,13 @@ React.useEffect(()=>{
      },7500)
      return()=>clearTimeout(timeout)
      },[show])
-
+const realFlow=place.targetFloor+1;
 return(<div>{show?<div>
-       <p>Current floor {place.floor} 
+       <p>Current floor {place.floor+1} 
         {place.state === "up"
-             ?", and we're moving up to "+place.targetFloor:null}  
+             ?", and we're moving up to "+realFlow:null}  
         {place.state === "down"
-             ?", and we're miving down to "+place.targetFloor:null}
+             ?", and we're miving down to "+realFlow:null}
              </p>
 
          <div className="contain">

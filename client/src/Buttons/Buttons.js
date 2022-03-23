@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './buttons.css';
 
 function Buston(){
 	const [click, setClick] = React.useState(false);
@@ -97,4 +98,9 @@ React.useEffect(()=>{
 	     },[tick]); 
  return <button onClick={handTick}>10</button>}
 
- export const Buttons =()=>{return(<><B0/> <B1/> <B2/> <B3/> <B4/> <B5/> <B6/> <B7/> <B8/> <B9/></>)}
+export const Buttons =()=>{return(
+ 	 <div className="cont">
+ 	             <div className="first"><B0/> <B1/> <B2/></div>
+ 	             <div className="secon"><B3/> <B4/> <B5/></div>
+ 	      <div className="third"><B6/> <B7/> <B8/> <B9/></div>
+ 	  </div>)}
