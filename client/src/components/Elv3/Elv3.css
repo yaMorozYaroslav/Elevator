@@ -1,14 +1,11 @@
 .contain{display: inline};
-.second{
-	background: black;
-    width: 100px;
-    height: 50px;
-    
-   }
+
 .one{
-	background: green;
+	background: black;
 	width: 100px;
 	height: 50px;
-	
-
+}
+img{
+	width: 100px;
+	heigth: 100px;
 }

@@ -2,7 +2,8 @@ import React from 'react';
 import {Buttons} from './Buttons/Buttons.js';
 import {Control} from './components/Control/Control';
 import {Build} from './components/Build';
-import {Welcome,Instruct} from './components/Intro/Intro';
+import {Intro} from './components/Intro/Intro';
+import {Instru} from './components/Intro/Instru';
 import './App.css';
 
 export function App(){
@@ -10,6 +11,6 @@ export function App(){
   	     <div ><Control/></div>
          <div><Buttons/><Build/></div>
             </div>
-            <Welcome/>
-            <Instruct/></>);
+            <Intro/>
+            <Instru/></>);
 }

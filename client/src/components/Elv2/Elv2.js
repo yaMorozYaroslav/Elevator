@@ -1,6 +1,7 @@
 import React from 'react';
 import {axioser} from '../Control/Control';
 import './Elv2.css';
+import Man from '../Man.png';
 
 export const Elv2 =()=>{
 	const [place, setData] = React.useState([]);
@@ -27,44 +28,44 @@ return(<div>{show?<div>
          <div className="contain">
 
                {place.floor === 9
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
               {place.floor === 8
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
                 {place.floor === 7
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
                 {place.floor === 6
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
                 {place.floor === 5
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
                 {place.floor === 4
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
                 {place.floor === 3
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
                 {place.floor === 2
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
                 {place.floor === 1
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
 
                 {place.floor === 0
-               ?<div className="second"/>
+               ?<img src={Man}/>
                 :<div className="one"/>}
-                </div>
+                </div> 
         </div>:null}</div>)
 }
