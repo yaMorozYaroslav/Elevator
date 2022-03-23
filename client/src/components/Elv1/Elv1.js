@@ -20,31 +20,11 @@ return <>
 
          <div className="contain">
 
-               {place.floor == "0"
+               {place.floor == "9"
                ?<div className="one"/>
                 :<div className="second"/>}
 
-              {place.floor == "1"
-               ?<div className="one"/>
-                :<div className="second"/>}
-
-                {place.floor == "2"
-               ?<div className="one"/>
-                :<div className="second"/>}
-
-                {place.floor == "3"
-               ?<div className="one"/>
-                :<div className="second"/>}
-
-                {place.floor == "4"
-               ?<div className="one"/>
-                :<div className="second"/>}
-
-                {place.floor == "5"
-               ?<div className="one"/>
-                :<div className="second"/>}
-
-                {place.floor == "6"
+              {place.floor == "8"
                ?<div className="one"/>
                 :<div className="second"/>}
 
@@ -52,11 +32,31 @@ return <>
                ?<div className="one"/>
                 :<div className="second"/>}
 
-                {place.floor == "8"
+                {place.floor == "6"
                ?<div className="one"/>
                 :<div className="second"/>}
 
-                {place.floor == "9"
+                {place.floor == "5"
+               ?<div className="one"/>
+                :<div className="second"/>}
+
+                {place.floor == "4"
+               ?<div className="one"/>
+                :<div className="second"/>}
+
+                {place.floor == "3"
+               ?<div className="one"/>
+                :<div className="second"/>}
+
+                {place.floor == "2"
+               ?<div className="one"/>
+                :<div className="second"/>}
+
+                {place.floor == "1"
+               ?<div className="one"/>
+                :<div className="second"/>}
+
+                {place.floor == "0"
                ?<div className="one"/>
                 :<div className="second"/>}
                 </div> 
