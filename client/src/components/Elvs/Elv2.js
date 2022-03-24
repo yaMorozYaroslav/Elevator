@@ -13,7 +13,7 @@ React.useEffect(()=>{
 React.useEffect(()=>{
      const timeout = setTimeout(()=>{
           setShow(true)
-     },7500)
+     },7600)
      return()=>clearTimeout(timeout)
      },[show])
 const realFlow=place.targetFloor+1;

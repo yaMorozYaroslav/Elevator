@@ -4,11 +4,20 @@
 }
 .one{
 	background: black;
-	border: solid 1px white;
-	width: 100px;
-	height: 50px;
+	border: solid 3px white;
+	width: 120px;
+	height: 45px;
+	margin-left: 15px;
 }
 img{
-	width: 100px;
-	heigth: 100px;
+	width: 90px;
+	heigth: 90px;
+	margin-left: 38px;
+}
+.logo{
+	border: black 1px solid;
+	font-size: 20px;
+	width: 150px;
+	height: 80px;
+	text-align: center;
 }

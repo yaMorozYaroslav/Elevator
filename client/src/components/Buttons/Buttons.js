@@ -102,5 +102,6 @@ export const Buttons =()=>{return(
  	 <div className="cont">
  	             <div className="first"><B0/> <B1/> <B2/></div>
  	             <div className="secon"><B3/> <B4/> <B5/></div>
- 	      <div className="third"><B6/> <B7/> <B8/> <B9/></div>
+ 	      <div className="third"><B6/> <B7/> <B8/> 
+ 	      <div><B9/></div></div>
  	  </div>)}

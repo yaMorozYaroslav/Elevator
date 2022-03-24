@@ -18,7 +18,7 @@ React.useEffect(()=>{
     const realFlow=place.targetFloor+1;
 
            return (<div>{show?<div>
-       <p>Current floor {place.floor+1} 
+       <p className="logo">Current floor {place.floor+1} 
         {place.state === "up"
              ?", and we're moving up to "+realFlow:null}  
         {place.state === "down"
