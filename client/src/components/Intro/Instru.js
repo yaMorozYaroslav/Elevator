@@ -6,10 +6,11 @@
         
  		const timein = setTimeout(()=>{
  			setVik(false)
- 		},5500)
+ 		},6500)
 
  		return()=>clearTimeout(timein);
  	},[vik])
- 	return<p>{vik?'You can access all elevators  by double- and triple-click.':null}</p>
-
+ 	return<p>{vik
+        ?'You can access all elevators  by double- and triple-click. The countdown starts from the first.'
+        :null}</p>
  }

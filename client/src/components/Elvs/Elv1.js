@@ -12,20 +12,25 @@ React.useEffect(()=>{
 React.useEffect(()=>{
      const timeout = setTimeout(()=>{
           setShow(true)
-     },7200)
+     },7500)
      return()=>clearTimeout(timeout)
      },[show])
     const realFlow=place.targetFloor+1;
 
            return (<div>{show?<div>
-       <p className="logo">Current floor {place.floor+1} 
+       <p className={place.state === "stopped"
+                     ?"logi"
+                     :"logo"
+                    }>Floor N{place.floor+1} 
         {place.state === "up"
-             ?", and we're moving up to "+realFlow:null}  
+             ?" moving up to "+realFlow:null}  
         {place.state === "down"
-             ?", and we're miving down to "+realFlow:null}
+             ?" moving down to "+realFlow:null}
              </p>
 
          <div className="contain">
+
+             
 
                {place.floor === 9
                ?<img src={Man}/>
@@ -66,6 +71,11 @@ React.useEffect(()=>{
                 {place.floor === 0
                ?<img src={Man}/>
                 :<div className="one"/>}
+
+                {place.floor >= 0
+               ?<div className="one">The First Elevator</div>
+               :null}
                 </div> 
+
         </div>:null}</div>)
 }
