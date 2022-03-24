@@ -1,4 +1,5 @@
  import React from 'react';
+ import './Intro.css';
 
  export function Instru(){
  	const [vik, setVik] = React.useState(true)
@@ -10,7 +11,7 @@
 
  		return()=>clearTimeout(timein);
  	},[vik])
- 	return<p className="intsru">{vik
-        ?'You can access all elevators  by double- and triple-click. The countdown starts from the first.'
+ 	return<p className="instru">{vik
+        ?'You can access all elevators  by double- and triple-click. Countdown starts from the first or nearest available elevator.'
         :null}</p>
  }

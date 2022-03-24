@@ -13,7 +13,7 @@ React.useEffect(()=>{
 React.useEffect(()=>{
      const timeout = setTimeout(()=>{
           setShow(true)
-     },7800)
+     },8500)
      return()=>clearTimeout(timeout)
      },[show])
 const realFlow=place.targetFloor+1;
@@ -23,9 +23,9 @@ return (<div>{show?<div>
                      :"logo"
                     }>Floor N{place.floor+1} 
         {place.state === "up"
-             ?" moving up to "+realFlow:null}  
+             ?" --moving up to "+realFlow:null}  
         {place.state === "down"
-             ?" moving down to "+realFlow:null}
+             ?" --moving down to "+realFlow:null}
              </p>
 
          <div className="contain">

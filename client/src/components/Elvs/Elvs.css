@@ -8,10 +8,12 @@
 	background: black;
 	color: white;
 	border: solid 3px white;
+	border-radius: 7px;
 	width: 120px;
 	font-size: 17px;
 	height: 45px;
 	margin: 0px 0px 0px 0px;
+	text-align:  center;
 	
 }
 img{
@@ -20,20 +22,21 @@ img{
 	margin-left: 30px;
 }
 .logo{
-	color:  blue;
-	margin-bottom: -5px;
+	color:  white;
+	background:  dodgerblue;
+	margin-bottom: 0px;
+	margin-top: 10px;
 	font-size: 18px;
-	width: 130px;
+	width: 140px;
 	height: 47px;
 	text-align: center;
 }
 .logi{
 	font-size: 20px;
-	margin-bottom: -5px;
-	width: 150px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+	width: 130px;
 	height: 45px;
 	text-align: center;
 }
-.instru{
-	font-size: 20px;
-}
+

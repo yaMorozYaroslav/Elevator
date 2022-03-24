@@ -1,8 +1,15 @@
 .cont{
-	margin: 90px 0px 0px 0px;
+	margin: 100px 0px 100px 10px;
 }
 button{
-	width: 80px;
-	height: 50px;
-	margin: 5px;
+	width: 100px;
+	height: 80px;
+	margin: 2px;
+	font-size: 20px;
+	color: white;
+	background: black;
+	border: white 3px solid;
+}
+button:hover{
+	background: dodgerblue;
 }

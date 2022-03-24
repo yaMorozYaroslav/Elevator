@@ -1,4 +1,5 @@
 import React from 'react';
+import './Intro.css';
  
  export function Intro(){
  	const [vip, setVip] = React.useState(true)
@@ -6,11 +7,11 @@ import React from 'react';
         
  		const timeout = setTimeout(()=>{
  			setVip(false)
- 		},4000)
+ 		},5000)
 
  		return()=>clearTimeout(timeout);
  	},[vip])
- 	return<p>{vip?'Hello there':null}</p>
+ 	return<p className="well">{vip?'Hello there':null}</p>
 
  }
 
