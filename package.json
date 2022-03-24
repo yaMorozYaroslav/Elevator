@@ -4,13 +4,19 @@
   "description": "Elevators code challenge - backend",
   "private": true,
   "main": "src/index.js",
+  "engines": {
+    "node": "16.11.0"
+  },
   "scripts": {
+    "client-install": "cd client && npm install",
     "client": "npm start --prefix client",
     "server": "nodemon --watch src -e js,ejs --exec npm run start",
     "start": "node .",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "mocha --recursive './src/**/*.spec.js'",
-    "test:watch": "mocha --recursive './src/**/*.spec.js' --watch"
+    "test:watch": "mocha --recursive './src/**/*.spec.js' --watch",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  
   },
   "author": "Fortum",
   "license": "UNLICENSED",
