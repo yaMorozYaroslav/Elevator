@@ -32,43 +32,43 @@ return (<div>{show?<div>
         
 
                {place.floor === 9
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
               {place.floor === 8
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
                 {place.floor === 7
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
                 {place.floor === 6
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
                 {place.floor === 5
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
                 {place.floor === 4
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
                 {place.floor === 3
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
                 {place.floor === 2
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
                 {place.floor === 1
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
 
                 {place.floor === 0
-               ?<img src={Man}/>
+               ?<img src={Man} alt="man"/>
                 :<div className="one"/>}
                 {place.floor >= 0
                ?<div className="one">The Third Elevator</div>
