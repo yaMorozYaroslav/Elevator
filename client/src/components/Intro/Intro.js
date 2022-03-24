@@ -7,11 +7,11 @@ import './Intro.css';
         
  		const timeout = setTimeout(()=>{
  			setVip(false)
- 		},5000)
+ 		},2000)
 
  		return()=>clearTimeout(timeout);
  	},[vip])
- 	return<p className="well">{vip?'Hello there':null}</p>
+ 	return<p className="well">{vip?'Good day.':null}</p>
 
  }
 

@@ -7,11 +7,11 @@
         
  		const timein = setTimeout(()=>{
  			setVik(false)
- 		},6500)
+ 		},7000)
 
  		return()=>clearTimeout(timein);
  	},[vik])
  	return<p className="instru">{vik
-        ?'You can access all elevators  by double- and triple-click. Countdown starts from the first or nearest available elevator.'
+        ?'You can access all elevators  by double- and triple-click. Countdown starts from nearest available or the first elevator.'
         :null}</p>
  }
