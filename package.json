@@ -12,7 +12,7 @@
     "start": "node .",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "mocha --recursive './src/**/*.spec.js'",
-    "test:watch": "mocha --recursive './src/**/*.spec.js' --watch",
+    "test:watch": "mocha --recursive './src/**/*.spec.js' --watch"
      },
   "author": "Fortum",
   "license": "UNLICENSED",
