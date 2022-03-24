@@ -10,7 +10,7 @@
 
  		return()=>clearTimeout(timein);
  	},[vik])
- 	return<p>{vik
+ 	return<p className="intsru">{vik
         ?'You can access all elevators  by double- and triple-click. The countdown starts from the first.'
         :null}</p>
  }
