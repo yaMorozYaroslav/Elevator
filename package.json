@@ -11,6 +11,7 @@
     "server": "nodemon --watch src -e js,ejs --exec npm run start",
     "start": "node .",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "test": "mocha --recursive './src/**/*.spec.js'",
     "test:watch": "mocha --recursive './src/**/*.spec.js' --watch"
      },

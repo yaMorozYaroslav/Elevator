@@ -6,7 +6,7 @@ import {Elv2} from '../Elvs/Elv2';
 import {Elv3} from '../Elvs/Elv3';
 
 export const axioser = async () =>{
-     const result = await axios.get("http://localhost:8080/elevators").then(({data})=>data);
+     const result = await axios.get('elevators').then(({data})=>data);
      return result;
  }
 

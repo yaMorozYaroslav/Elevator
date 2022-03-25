@@ -8,7 +8,7 @@ import './App.css';
 
 export function App(){
   return (<><div className="flex">
-  	     <div ><Control/></div>
+  	     <div><Control/></div>
          <div><Buttons/><Build/></div>
             </div>
             <Intro/>
