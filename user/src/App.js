@@ -1,16 +1,19 @@
-import React from 'react';
-import {Buttons} from './components/Buttons/Buttons.js';
-import {Control} from './components/Control/Control';
-import {Build} from './components/Build';
-import {Intro} from './components/Intro/Intro';
-import {Instru} from './components/Intro/Instru';
-import './App.css';
+import React from 'react'
+import {useDispatch} from 'react-redux'
+import {getElvs} from './action/elvAct'
+import {Elvs} from './comps/Elvs'
 
-export function App(){
-  return (<><div className="flex">
-  	     <div><Control/></div>
-         <div><Buttons/><Build/></div>
-            </div>
-            <Intro/>
-            <Instru/></>);
+export const App =()=> {
+    const dispatch = useDispatch()
+
+   React.useEffect(()=>{
+    dispatch(getElvs())
+   }, [dispatch])
+
+
+return(
+   <div className="app">
+      <Elvs />
+    </div>
+    )
 }
