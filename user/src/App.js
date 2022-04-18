@@ -1,7 +1,7 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
-import {getElvs} from './action/elvAct'
+import {getElvs, moveZeru} from './action/elvAct'
 import {Elvs} from './comps/Elvs'
+import {useDispatch} from 'react-redux'
 
 export const App =()=> {
     const dispatch = useDispatch()
@@ -9,11 +9,14 @@ export const App =()=> {
    React.useEffect(()=>{
     dispatch(getElvs())
    }, [dispatch])
+   const submit =(e)=>{
+    dispatch(moveZeru())
+   }
 
-
-return(
+return(<>
    <div className="app">
       <Elvs />
+   <button onClick={submit}>submit</button>
     </div>
-    )
-}
+
+    </>)}
