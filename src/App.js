@@ -1,12 +1,12 @@
 import React from 'react'
-
+import {TodoList} from './features/todos/TodoList'
 function App() {
   return (
     <div className="App">
       <nav>
         <section>
           <h1>Redux Fundamentals Example</h1>
-
+          <TodoList/>
           <div className="navContent">
             <div className="navLinks"></div>
           </div>
