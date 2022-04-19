@@ -5,15 +5,10 @@ import App from './App'
 import './api/server'
 
 import store from './store'
-console.log('Initail state: ', store.getState())
-const unsubscribe = store.subscribe(()=>
-   console.log('State after dispatch: ', store.getState())
-  )
+
 store.dispatch({type: 'todos/todoAdded', payload: 'Learn about actions'})
-
-unsubscribe()
-
-store.dispatch({type: 'todos/todoAdded', payload: 'Try creating'})
+console.log('Dispatch complete')
+console.log('State after dispatch: ', store.getState())
 ReactDOM.render(
   <React.StrictMode>
     <App />
