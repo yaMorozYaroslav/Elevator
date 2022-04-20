@@ -31,7 +31,8 @@ const filtersSlice = createSlice({
 				case 'removed':{
 					state.colors = colors.filter(
 						(existingColor) => existingColor !== color
-				   )		
+				   )
+				   break		
 				}
 				default: 
 				    return

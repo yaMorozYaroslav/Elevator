@@ -1,15 +1,16 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 
-import {availableColors, capitalize} from '../filters/colors'
-import {StatusFilters,
-        onColorChange,
-        onStatusChange} from '../filters/filtersSlice'
+import {RemainingTodos,
+        StatusFilter, 
+        ColorFilters} from '../filters/FiltComps'
+
+import {onColorChange, onStatusChange} from '../filters/filtersSlice'
 
 export const Footer =()=>{
 	const todosRemaining = useSelector(state=>{
 		const uncompletedTodos = state.todos.filter(todo=>!todo.completed)
-		return uncomletedTodos.length
+		return uncompletedTodos.length
 	})
 	const {status, colors} = useSelector(state=>state.filters)
 
@@ -24,5 +25,6 @@ export const Footer =()=>{
          <RemainingTodos count={todosRemaining}/>
          <StatusFilter value={status} onChange={onStatusChange} />
          <ColorFilters value={colors} onChange={onColorChange} />
+         </footer>
 		)
 }
