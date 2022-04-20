@@ -45,5 +45,5 @@ const filtersSlice = createSlice({
 	}
   }
 })
-export const {colorFilterChanged, statusFilterChanged} = filtersSlice.actions
+export const {onColorChange, onStatusChange} = filtersSlice.actions
 export default filtersSlice.reducer

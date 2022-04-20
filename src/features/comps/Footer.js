@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux'
 
 import {availableColors, capitalize} from '../filters/colors'
 import {StatusFilters,
-        onColoreChange,
+        onColorChange,
         onStatusChange} from '../filters/filtersSlice'
 
 export const Footer =()=>{
