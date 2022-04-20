@@ -1,5 +1,6 @@
 import React from 'react'
 import {Header} from './features/comps/Header'
+import {Footer} from './features/comps/Footer'
 import {TodoList} from './features/todos/TodoList'
 function App() {
   return (
