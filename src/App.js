@@ -1,11 +1,12 @@
 import React from 'react'
+import {Header} from './features/comps/Header'
 import {TodoList} from './features/todos/TodoList'
 function App() {
   return (
     <div className="App">
       <nav>
         <section>
-          <h1>Redux Fundamentals Example</h1>
+          <Header/>
           <TodoList/>
           <div className="navContent">
             <div className="navLinks"></div>
