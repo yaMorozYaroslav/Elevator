@@ -15,7 +15,7 @@ const filtersSlice = createSlice({
 	initialState,
 	reducers: {
 		statusFilterChanged(state, action){
-		status = action.payload
+		state.status = action.payload
 	},
 	colorFilterChanged: {
 		reducer(state, action){
@@ -30,7 +30,7 @@ const filtersSlice = createSlice({
 				}
 				case 'removed':{
 					state.colors = colors.filter(
-						(exisitingColor) => existingColor !== color
+						(existingColor) => existingColor !== color
 				   )		
 				}
 				default: 
