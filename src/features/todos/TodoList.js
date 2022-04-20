@@ -2,13 +2,13 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 import {TodoItem} from './TodoItem'
 
-const selectTodos = state => state.todos
+const selectTodoIds = state => state.todos.map(todo=>todo.id)
 
 export const TodoList =()=>{
-	const todos = useSelector(selectTodos)
+	const todoIds = useSelector(selectTodoIds)
 
-	const renderedListItems = todos.map(todo=>{
-		return <TodoItem key={todo.id} todo={todo}/>
+	const renderedListItems = todoIds.map(todoId=>{
+		return <TodoItem key={todoId} todo={todoId}/>
 	})
   return <ul>{renderedListItems}</ul>
 }

@@ -9,6 +9,7 @@ function App() {
         <section>
           <Header/>
           <TodoList/>
+          <Footer />
           <div className="navContent">
             <div className="navLinks"></div>
           </div>
