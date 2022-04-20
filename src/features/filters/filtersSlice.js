@@ -14,11 +14,11 @@ const filtersSlice = createSlice({
 	name: 'filters',
 	initialState,
 	reducers: {
-		statusFilterChanged(state, action){
+		onColorChange(state, action){
 		state.status = action.payload
 	},
-	colorFilterChanged: {
-		reducer(state, action){
+	    onStatusChange: {
+		 reducer(state, action){
 			let{color, changeType} = action.payload
 			const {colors} = state
 			switch(changeType){
