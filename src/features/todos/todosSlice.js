@@ -1,4 +1,5 @@
 import {client} from '../../api/client'
+import {createSelector} from 'reselect'
 const initialState = [
  {id: 0, text: 'Learn React', completed: true},
  {id: 1, text: 'Learn Redux', completed: false, color: 'purple'},
@@ -53,3 +54,4 @@ export function saveNewTodo(text){
 
 		}
 	}
+	export const selectTodoIds =
