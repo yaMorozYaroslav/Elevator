@@ -10,8 +10,6 @@ import {fetchTodos} from './features/todos/todosSlice'
 
 store.dispatch(fetchTodos)
 
-store.dispatch({type: 'todos/todoAdded', payload: 'Learn about actions'})
-console.log('State after dispatch: ', store.getState())
 
 ReactDOM.render(
   <React.StrictMode>

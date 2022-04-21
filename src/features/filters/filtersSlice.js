@@ -46,5 +46,11 @@ const filtersSlice = createSlice({
 	}
   }
 })
+export const colorFilterChanged = (color, changeType) => {
+	return{
+		type: 'filters/colorFilterChanged',
+		payload: {color, changeType}
+	}
+}
 export const {onColorChange, onStatusChange} = filtersSlice.actions
 export default filtersSlice.reducer

@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-
+import {StatusFilters, colorFilterChanged} from '../filters/filtersSlice'
 import {RemainingTodos,
         StatusFilter, 
         ColorFilters} from '../filters/FiltComps'
@@ -23,7 +23,7 @@ export const Footer =()=>{
   //const onClearCompletedClicked =()=> dispatch(completedTodosCleared())
 
   const colorChange =(color, changeType)=>
-                        dispatch(onColorChange(color, changeType))
+                        dispatch(colorFilterChanged(color, changeType))
   const statusChange =(status)=>
                         dispatch(onStatusChange(status))
 
