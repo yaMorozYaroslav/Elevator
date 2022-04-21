@@ -1,5 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
+import {saveNewTodo} from '../todos/todosSlice'
 
 export const Header =()=>{
 	const [text,setText] = React.useState('')
@@ -10,7 +11,7 @@ export const Header =()=>{
 	const handleKeyDown =e=>{
 		const trimmedText = e.target.value.trim()
 		if(e.key === 'Enter' && trimmedText){
-			dispatch({type: 'todos/todoAdded', payload: trimmedText})
+			dispatch(saveNewTodo(trimmedText))
 			setText('')
 		}
 	}

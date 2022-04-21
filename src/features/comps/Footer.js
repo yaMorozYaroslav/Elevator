@@ -6,10 +6,10 @@ import {RemainingTodos,
         ColorFilters} from '../filters/FiltComps'
 
 import {onColorChange, onStatusChange} from '../filters/filtersSlice'
-import {
+/*import {
   completedTodosCleared,
   allTodosCompleted
-} from '../todos/todosSlice'
+} from '../todos/todosSlice'*/
 export const Footer =()=>{
   const dispatch = useDispatch()
 
@@ -19,8 +19,8 @@ export const Footer =()=>{
 	})
 	const {status, colors} = useSelector((state)=>state.filters)
 
-  const onMarkCompletedClicked =()=> dispatch(allTodosCompleted())
-  const onClearCompletedClicked =()=> dispatch(completedTodosCleared())
+  //const onMarkCompletedClicked =()=> dispatch(allTodosCompleted())
+  //const onClearCompletedClicked =()=> dispatch(completedTodosCleared())
 
   const colorChange =(color, changeType)=>
                         dispatch(onColorChange(color, changeType))
@@ -33,15 +33,15 @@ export const Footer =()=>{
           <h5>Actions</h5>
           <button 
              className="button"
-             onClick={onMarkCompletedClicked}>Mark All Comleted</button>
+             >Mark All Comleted</button>
           <button 
              className="button"
-             onClick={onClearCompletedClicked}>Clear Completed</button>
+             >Clear Completed</button>
          </div>
 
          <RemainingTodos count={todosRemaining}/>
-         <StatusFilter value={status} onChange={onStatusChange} />
-         <ColorFilters value={colors} onChange={onColorChange} />
+         <StatusFilter value={status} onChange={statusChange} />
+         <ColorFilters value={colors} onChange={colorChange} />
          </footer>
 		)
 }
