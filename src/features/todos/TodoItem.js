@@ -8,7 +8,7 @@ const selectTodoById = (state, todoId) => {
 
 export const TodoItem =({id})=>{
 	const dispatch = useDispatch()
-	const todo = useSelector(state => selectTodoById(state, id))
+	const todo = useSelector((state) => selectTodoById(state, id))
 	const {text, completed, color} = todo
 	const handleCompletedChanged =()=>{
 		dispatch({type: 'todos/todoToggled', payload: todo.id})
