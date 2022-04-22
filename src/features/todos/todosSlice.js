@@ -3,9 +3,8 @@ import {createSelector} from 'reselect'
 import {StatusFilters} from '../filters/filtersSlice'
 
 const initialState = [
- {id: 0, text: 'Learn React', completed: true},
- {id: 1, text: 'Learn Redux', completed: false, color: 'purple'},
- {id: 2, text: 'Build something fun!', completed: false, color: 'blue'}
+ status: 'idle',
+ entities: []
 ]
 function nextTodoId(todos){
  const maxId = todos.reduce((maxId, todo)=> Math.max(todo.id, maxId), -1)
@@ -14,18 +13,24 @@ function nextTodoId(todos){
 export default function todosReducer(state=initialState, action){
 	switch(action.type){
 		case 'todos/todoAdded':{
-			return[...state, action.payload]
+			return{...state,
+			 entities: [...state.entities, action.payload]
+			}
 		}
 		case 'todos/todoToggled':{
-			return state.map(todo=>{
-				if(todo.id !== action.payload){
-					return todo
-				}
-				return{
-					...todo,
-					completed: !todo.completed
-				}
-			})
+			return{
+				...state,
+				entities: state.entities.map(todo => {
+					if(todo.id !== action.payload){
+						return todo
+					}
+					return{
+						...todo,
+						completed: !todo.completed
+					}
+				})
+			}
+			
 		}
 		case 'todos/todosLoaded': {
 			return action.payload
@@ -81,7 +86,7 @@ export const selectFilteredTodos = createSelector(
    	selectFilteredTodos,
    	filteredTodos => filteredTodos.map(todo => todo.id)
    	)
-   export const selectTodos = state => state.todos
+   export const selectTodos = state => state.todos.entities
 
    export const selectTodoById = (state, todoId) => {
    	   return selectTodos(state).find(todo=>todo.id===todoId)
