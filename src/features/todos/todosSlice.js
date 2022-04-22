@@ -1,5 +1,7 @@
 import {client} from '../../api/client'
 import {createSelector} from 'reselect'
+import {StatusFilters} from '../filters/filtersSlice'
+
 const initialState = [
  {id: 0, text: 'Learn React', completed: true},
  {id: 1, text: 'Learn Redux', completed: false, color: 'purple'},
@@ -54,4 +56,33 @@ export function saveNewTodo(text){
 
 		}
 	}
-	//export const selectTodoIds =
+	export const selectTodoIds = createSelector(
+      state => state.todos,
+      todos => todos.map(todo =>todo.id)
+		)
+export const selectFilteredTodos = createSelector(
+   selectTodos,
+   state => state.filters,
+   (todos, filters) => {
+   	const {status, color} = filters
+   	const showAllCompletions = status === StatusFilters.All
+   	if(showAllCompletions && colors.length === 0){
+   		return todos
+   	}
+   	const completedStatus = status === StatusFilters.Completed
+    retunr todos.filtere(todo=>{
+    	const statusMatches =
+    	   colors.length === 0||colors.includes(todo.color)
+    	return statusMatches && colorMatches
+    })
+   }
+	)
+   export const selectFilteredTodoIds = createSelector(
+   	selectFilteredTodos,
+   	filteredTodos => filteredTodos.map(todo => todo.id)
+   	)
+   export const selectTodos = state => state.todos
+
+   export const selectTodoById = (state, todoId) => {
+   	   return selectTodos(state).find(todo=>todo.id===todoId)
+   }
