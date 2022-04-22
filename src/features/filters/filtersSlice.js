@@ -52,5 +52,5 @@ export const colorFilterChanged = (color, changeType) => {
 		payload: {color, changeType}
 	}
 }
-export const {onColorChange, onStatusChange} = filtersSlice.actions
+export const { onStatusChange} = filtersSlice.actions
 export default filtersSlice.reducer

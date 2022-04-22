@@ -4,8 +4,7 @@ import {StatusFilters, colorFilterChanged} from '../filters/filtersSlice'
 import {RemainingTodos,
         StatusFilter, 
         ColorFilters} from '../filters/FiltComps'
-
-import {onColorChange, onStatusChange} from '../filters/filtersSlice'
+import {onStatusChange} from '../filters/filtersSlice'
 /*import {
   completedTodosCleared,
   allTodosCompleted
