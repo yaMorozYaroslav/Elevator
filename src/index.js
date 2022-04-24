@@ -7,7 +7,6 @@ import store from './app/store'
 import {App} from './App'
 import './index.css'
 
-store.getState()
 
 const rootElement = document.getElementById('root')
 const root = createRoot(rootElement)
