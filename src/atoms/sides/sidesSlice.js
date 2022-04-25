@@ -7,7 +7,7 @@ status: 'idle',
 error: null}
 
 export const toFirst = createAsyncThunk('sides/moveSides', async()=>{
-   const response = await axios.put('floor/1')
+   const response = await axios.put('floor/8')
    return response
 })
 

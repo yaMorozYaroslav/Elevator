@@ -14,10 +14,12 @@ import {selectAllSides, fetchSides} from './atoms/sides/sidesSlice'
 
 export function App(){
 	const dispatch = useDispatch()
-	const posts = useSelector(selectAllSides)
+	const sides = useSelector(selectAllSides)
+	const postStatus = useSelector(state => state.sides.status)
 	React.useEffect(()=>{
-      dispatch(fetchSides())
-	}, [posts])
+     if(postStatus === 'idle'){ 
+     	dispatch(fetchSides())}
+	}, [postStatus, dispatch])
 	return(
       <Router>
        <Routes>
