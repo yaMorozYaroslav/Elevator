@@ -3,10 +3,12 @@ import {createRoot} from 'react-dom/client'
 
 import {Provider} from 'react-redux'
 import store from './app/store'
+import {fetchSides} from './atoms/sides/sidesSlice'
 
 import {App} from './App'
 import './index.css'
 
+store.dispatch(fetchSides())
 
 const rootElement = document.getElementById('root')
 const root = createRoot(rootElement)
