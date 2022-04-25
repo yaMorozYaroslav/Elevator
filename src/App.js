@@ -14,9 +14,7 @@ export function App(){
       <Router>
        <Routes>
          <Route path="/" element={<Navbar/>}/>
-         
        </Routes>
-       <Navigate to="/"/>
       </Router>
 		)
 }

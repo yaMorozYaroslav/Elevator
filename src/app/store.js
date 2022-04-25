@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit'
 
-import postsReducer fron '../features/posts/postsSlice'
+import sidesReducer from '../atoms/sides/sidesSlice'
 
 export default configureStore({
 	reducer: {
