@@ -6,8 +6,13 @@ sides: [],
 status: 'idle',
 error: null}
 
+export const toFirst = createAsyncThunk('sides/moveSides', async()=>{
+   const response = await axios.put('floor/1')
+   return response
+})
+
 export const fetchSides = createAsyncThunk('sides/fetchSides', async()=>{
-	const response = await axios.get('https://back-elevators.herokuapp.com/elevators')
+	const response = await axios.get('elevators')
 	return response.data
 })
 

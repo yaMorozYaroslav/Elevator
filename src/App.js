@@ -6,19 +6,22 @@ import {
 	Navigate
 }from 'react-router-dom'
 
-import {useDispatch} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {Navbar} from './app/Navbar'
-import {fetchSides} from './atoms/sides/sidesSlice'
+import {List} from './atoms/sides/List'
+import {selectAllSides, fetchSides} from './atoms/sides/sidesSlice'
 //import {Elevs} from
 
 export function App(){
+	const dispatch = useDispatch()
+	const posts = useSelector(selectAllSides)
 	React.useEffect(()=>{
-
-	})
+      dispatch(fetchSides())
+	}, [posts])
 	return(
       <Router>
        <Routes>
-         <Route path="/" element={<Navbar/>}/>
+         <Route path="/" element={<List/>}/>
        </Routes>
       </Router>
 		)
