@@ -2,18 +2,19 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchSides} from './sidesSlice'
 
-export const Side = ({side}) => {
+const Side = ({side}, props) => {
 return(
 		<article >
-		  <h3>{side.id}</h3>
+		  <h3>{props.id}</h3>
 		  <h4>{side.floor}</h4>
 		  <h5>{side.state}</h5>
 		  </article>
 		)
-}
+} 
 const mapStateToProps =state=>{
 	return{
-		
+		id: state.id,
+		floor: state.floor
 	}
 }
 const mapDispatchToProps = dispatch =>{

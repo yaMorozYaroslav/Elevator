@@ -1,9 +1,7 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {selectAllSides, 	toFirst, fetchSides} from './sidesSlice'
-import {Side} from './Side'
-
-
+import Side from './Side'
 
 
 export const List =()=>{
