@@ -7,7 +7,7 @@ status: 'idle',
 error: null}
 
 export const toFirst = createAsyncThunk('sides/moveSides', async()=>{
-   const response = await axios.put('floor/2')
+   const response = await axios.put('floor/5')
    return response.data
 })
 
@@ -39,4 +39,8 @@ extraReducers(builder){
 export default sidesSlice.reducer
 
 export  const selectAllSides = state => state.sides.sides
+export const selectFirst = state => state.sides.sides[0]
 export const selectById =(state, id)=>
+   selectAllSides(state)?{...selectAllSides(state).byIds[id], id}:{}
+export const getAllSides =(state)=>
+    selectAllSides(state).map((id)=>selectById(state))

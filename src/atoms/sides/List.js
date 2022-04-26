@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {useSelector, useDispatch, shallowEqual} from 'react-redux'
 import {selectAllSides, 	toFirst, fetchSides, getState} from './sidesSlice'
 import {Sider} from './Sider'
@@ -19,7 +20,7 @@ return(
 		)
 }
 
-export const List =()=>{
+const List =()=>{
 	const [place, getData] = React.useState([])
 	const dispatch = useDispatch()
 	const sides = useSelector(selectAllSides, shallowEqual)
@@ -41,15 +42,25 @@ export const List =()=>{
      	dispatch(fetchSides())}
 	}, [place])
 	
+
 	const content = sides.map(side=>(<>
      	<Side key={side.id} side={side}/> 
      	</>))
  return(
       <section>
       {content}
-
       <button onClick={clicked}>but</button>
       </section>
  	)
-
+   }
+   const mapStateToProps =state=>{
+	return{
+		floor: state.floor
+	}
 }
+const mapDispatchToProps = dispatch =>{
+	return{
+		fetchSides: ()=>dispatch(fetchSides())
+	}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(List)
