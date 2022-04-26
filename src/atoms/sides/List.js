@@ -5,7 +5,7 @@ import {selectAllSides, 	toFirst, fetchSides} from './sidesSlice'
 import {Side}from './Side'
 
 
-export const List =(todos)=>{
+export const List =(props)=>{
 	const dispatch = useDispatch()
 	const sides = useSelector(selectAllSides)
      
@@ -31,7 +31,7 @@ export const List =(todos)=>{
    }
    const mapProps =state=> {
    	return{
-   		sider: state.sides
+   		id: state.sides.id
    	}
    }
 export default connect(mapProps)(List)
