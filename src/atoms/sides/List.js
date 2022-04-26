@@ -1,14 +1,13 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {useSelector, useDispatch} from 'react-redux'
 import {selectAllSides, 	toFirst, fetchSides} from './sidesSlice'
-import Side from './Side'
+import {Side}from './Side'
 
 
-export const List =()=>{
-	const [place, getData] = React.useState([])
+export const List =(todos)=>{
 	const dispatch = useDispatch()
 	const sides = useSelector(selectAllSides)
-	const sideStatus = useSelector(state=>state.sides.status)
      
      const clicked = async()=>{
      	try{
@@ -18,10 +17,6 @@ export const List =()=>{
      	}
      }
      
-	React.useEffect(()=>{
-     if(sideStatus === 'idle'){ 
-     	dispatch(fetchSides())}
-	}, [sideStatus, dispatch])
 	
 
 	const content = sides.map(side=>(
@@ -34,5 +29,11 @@ export const List =()=>{
       </section>
  	)
    }
+   const mapProps =state=> {
+   	return{
+   		sider: state.sides
+   	}
+   }
+export default connect(mapProps)(List)
    
 
