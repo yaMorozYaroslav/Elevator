@@ -7,14 +7,14 @@ status: 'idle',
 error: null}
 
 export const toFirst = createAsyncThunk('sides/moveSides', async()=>{
-   const response = await axios.put('floor/8')
-   return response
+   const response = await axios.put('floor/2')
+   return response.data
 })
 
 export const fetchSides = createAsyncThunk('sides/fetchSides', async()=>{
 	const response = await axios.get('elevators')
 	return response.data
-})
+}) 
 
 const sidesSlice = createSlice({
 	name: 'sides',
@@ -27,6 +27,7 @@ extraReducers(builder){
         })
         .addCase(fetchSides.fulfilled, (state, action)=>{
           state.status = 'succeeded'
+          state.sides = []
           state.sides = state.sides.concat(action.payload)
         })
         .addCase(fetchSides.rejected, (state, action)=>{
@@ -38,3 +39,4 @@ extraReducers(builder){
 export default sidesSlice.reducer
 
 export  const selectAllSides = state => state.sides.sides
+export const selectById =(state, id)=>
