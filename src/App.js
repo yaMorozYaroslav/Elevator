@@ -8,7 +8,7 @@ import {
 
 import {useSelector, useDispatch} from 'react-redux'
 import {Navbar} from './app/Navbar'
-import List from './atoms/sides/List'
+import {List} from './atoms/sides/List'
 import {selectAllSides} from './atoms/sides/sidesSlice'
 //import {Elevs} from
 

@@ -1,29 +1,15 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {useSelector, useDispatch, shallowEqual} from 'react-redux'
-import {selectAllSides, 	toFirst, fetchSides, getState} from './sidesSlice'
-import {Sider} from './Sider'
-import axios from 'axios'
+import {useSelector, useDispatch} from 'react-redux'
+import {selectAllSides, 	toFirst, fetchSides} from './sidesSlice'
+import {Side} from './Side'
 
-export const axioser = async()=>{
-	const result = await axios.get('elevators').then(({data})=>data)
-	return result
-}
 
-const Side = ({side}) => {
-return(
-		<article  key={side.id}>
-		  <h3>{side.id}</h3>
-		  <h4>{side.floor}</h4>
-		  <h5>{side.state}</h5>
-		  </article>
-		)
-}
 
-const List =()=>{
+
+export const List =()=>{
 	const [place, getData] = React.useState([])
 	const dispatch = useDispatch()
-	const sides = useSelector(selectAllSides, shallowEqual)
+	const sides = useSelector(selectAllSides)
 	const sideStatus = useSelector(state=>state.sides.status)
      
      const clicked = async()=>{
@@ -33,19 +19,16 @@ const List =()=>{
      		console.error('Failed', err)
      	}
      }
-     React.useEffect(()=>{
-        axioser().then(data=>getData(data))
-     	
-     }, [place])
+     
 	React.useEffect(()=>{
      if(sideStatus === 'idle'){ 
      	dispatch(fetchSides())}
-	}, [place])
+	}, [sideStatus, dispatch])
 	
 
-	const content = sides.map(side=>(<>
+	const content = sides.map(side=>(
      	<Side key={side.id} side={side}/> 
-     	</>))
+     	))
  return(
       <section>
       {content}
@@ -53,14 +36,5 @@ const List =()=>{
       </section>
  	)
    }
-   const mapStateToProps =state=>{
-	return{
-		floor: state.floor
-	}
-}
-const mapDispatchToProps = dispatch =>{
-	return{
-		fetchSides: ()=>dispatch(fetchSides())
-	}
-}
-export default connect(mapStateToProps, mapDispatchToProps)(List)
+   
+
