@@ -1,4 +1,9 @@
-import { createStore } from "redux";
-import rootReducer from "./reducers";
+import {configureStore} from '@reduxjs/toolkit'
 
-export default createStore(rootReducer);
+import sidesReducer from './sidesSlice'
+
+export default configureStore({
+	reducer:{
+		sides: sidesReducer
+	}
+})
