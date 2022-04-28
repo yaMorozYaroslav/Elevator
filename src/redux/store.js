@@ -1,9 +1,4 @@
-import {configureStore} from '@reduxjs/toolkit'
+import { combineReducers } from "redux"
+import todos from "./sideSlice"
 
-import sideReducer from './sideSlice'
-
-export default configureStore({
-	reducer:{
-		sides: sideReducer
-	}
-})
+export default combineReducers({ todos})

@@ -1,18 +1,14 @@
+import React from "react";
+import Side from "./Side";
 
-  import React from 'react'
-  import {connect} from 'react-redux'
-  import {getSides} from '../redux/selectors'
-  import Side from './Side'
-
-const List = ({sides})=>(
-  <ul>
-     {sides&&sides.length
-     	 ?sides.map((side,index)=>{
-     	return <Side key={side.id} side={side} />
-     })
-     	 :
-     	 "Create something"
- }
+const List = ({ todos }) => (
+  <ul className="todo-list">
+    {todos && todos.length
+      ? todos.map((todo, index) => {
+          return <Side key={`todo-${todo.id}`} todo={todo} />;
+        })
+      : "No todos, yay!"}
   </ul>
-	)
-	export default connect(state=>({sides: getSides(state)}))(List)
+);
+
+export default List;
