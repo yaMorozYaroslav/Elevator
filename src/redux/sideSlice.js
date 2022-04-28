@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from "./consts";
+import { ADD_TODO } from "./consts";
 
 const initialState = {
   allIds: [],
@@ -21,20 +21,7 @@ export default function(state = initialState, action) {
         }
       };
     }
-    case TOGGLE_TODO: {
-      const { id } = action.payload;
-      return {
-        ...state,
-        byIds: {
-          ...state.byIds,
-          [id]: {
-            ...state.byIds[id],
-            completed: !state.byIds[id].completed
-          }
-        }
-      };
-    }
-    default:
-      return state;
+    case FETCH_ELVS: {
+      
   }
-}
+}}
