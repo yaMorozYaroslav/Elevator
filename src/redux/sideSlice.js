@@ -1,4 +1,4 @@
-import { ADD_TODO } from "./consts";
+import { ADD_TODO, GET_ELVS} from "./consts";
 
 const initialState = {
   allIds: [],
@@ -21,7 +21,8 @@ export default function(state = initialState, action) {
         }
       };
     }
-    case FETCH_ELVS: {
+    case GET_ELVS: {
       
   }
-}}
+ }
+}
