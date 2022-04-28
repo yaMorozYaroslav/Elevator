@@ -1,11 +1,11 @@
-import {ADD_TODO} from './consts'
+import {ADD_SIDE} from './consts'
 
-let nextTodoId = 0
+let nextSideId = 0
 
-export const addTodo = content => ({
-	type: ADD_TODO,
+export const addSide = content => ({
+	type: ADD_SIDE,
 	payload: {
-		id: ++nextTodoId,
+		id: ++nextSideId,
 		content
 	}
 })

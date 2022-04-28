@@ -1,5 +1,5 @@
 import React from 'react'
-//import AddSide from './comps/AddSide'
+import Add from './comps/Add'
 import List from './comps/List'
 import './style.css'
 
@@ -8,6 +8,7 @@ export function App(){
       <div>
         <h1>List</h1>
         <List/>
+        <Add/>
         </div>
 		)
 }

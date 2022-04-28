@@ -1,4 +1,4 @@
-import {ADD_TODO} from '../consts'
+import {ADD_SIDE} from './consts'
 
 const initialState = {
 	sides: [],
@@ -7,7 +7,7 @@ const initialState = {
 
 export default function(state = initialState, action){
 	switch(action.type){
-		case ADD_TODO: {
+		case ADD_SIDE: {
 			const {id, content} = action.payload
 			return{
 				...state,

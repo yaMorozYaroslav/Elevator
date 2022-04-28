@@ -1,5 +1,6 @@
 import React from 'react'
-
+import {connect} from 'react-redux'
+import {addSide} from '../redux/actCreates'
 class Add extends React.Component{
 	constructor(props){
 		super(props)
@@ -8,7 +9,10 @@ class Add extends React.Component{
 	updateInput = input => {
 		this.setState({input})
 	}
-	handleAdd =()=>{}
+	handleAdd =()=>{
+		this.props.addSide(this.state.input)
+		this.setState({input: ''})
+	}
 
 	render(){
 		return(
@@ -21,4 +25,4 @@ class Add extends React.Component{
 	    )
 	}
 }
-export default Add
+export default connect(null, {addSide})(Add)

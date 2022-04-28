@@ -1,6 +1,8 @@
 
   import React from 'react'
-import Side from './Side'
+  import {connect} from 'react-redux'
+  import {getSides} from '../redux/selectors'
+  import Side from './Side'
 
 const List = ({sides})=>(
   <ul>
@@ -9,8 +11,8 @@ const List = ({sides})=>(
      	return <Side key={`side-${side.id}`} side={side} />
      })
      	 :
-     	 "Nothing yet"
+     	 "Create something"
  }
   </ul>
 	)
-	export default List
+	export default connect(state=>({sides: getSides(state)}))(List)

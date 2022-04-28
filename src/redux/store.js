@@ -1,9 +1,9 @@
 import {configureStore} from '@reduxjs/toolkit'
 
-import sidesReducer from './sidesSlice'
+import sideReducer from './sideSlice'
 
 export default configureStore({
 	reducer:{
-		sides: sidesReducer
+		sides: sideReducer
 	}
 })
