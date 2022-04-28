@@ -25,4 +25,7 @@ class Add extends React.Component{
 	    )
 	}
 }
-export default connect(null, {addSide})(Add)
+const mapState = state => {
+	return {sides: state.sides}
+}
+export default connect(mapState, {addSide})(Add)

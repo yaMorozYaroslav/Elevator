@@ -1,6 +1,6 @@
-export const getState = store => store.todos
+export const getState = store => store.sides
 export const getList = store => 
-          store&&store.sides?store.sides.sides:[]
+          getState(store)?getState(store).sides:[]
 export const getSideById = (store, id) =>
              getState(store)?{...getState(store).byIds[id], id}:{}
 export const getSides =(store)=> 
