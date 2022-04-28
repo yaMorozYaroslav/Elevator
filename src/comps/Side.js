@@ -1,8 +1,21 @@
-import React from 'react'
+import React from "react";
+import cx from "classnames";
 
-const Side =({side})=>(
-   <li onClick={()=>{}}>
-     <span>{side.content}</span>
-   </li>
-	)
-  export default Side
+const Todo = ({ todo }) => (
+  <li
+    className="todo-item"
+    onClick={() => {} }
+  >
+    {todo && todo.completed ? "👌" : "👋"}{" "}
+    <span
+      className={cx(
+        "todo-item__text",
+        todo && todo.completed && "todo-item__text--completed"
+      )}
+    >
+      {todo.content}
+    </span>
+  </li>
+);
+
+export default Todo;

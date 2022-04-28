@@ -1,4 +1,6 @@
 import React from "react";
+import {connect} from 'react-redux'
+import {getTodos} from '../redux/selectors'
 import Side from "./Side";
 
 const List = ({ todos }) => (
@@ -11,4 +13,4 @@ const List = ({ todos }) => (
   </ul>
 );
 
-export default List;
+export default connect(state=>({todos: getTodos(state) }))(List)

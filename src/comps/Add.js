@@ -1,4 +1,6 @@
-import React from "react";
+import React from "react"
+import {connect} from 'react-redux'
+import {addTodo} from '../redux/actCreates'
 
 class Add extends React.Component {
   constructor(props) {
@@ -10,7 +12,10 @@ class Add extends React.Component {
     this.setState({ input });
   };
 
-  handleAddTodo = () => {};
+ handleAddTodo=()=>{
+  	this.props.addTodo(this.state.input)
+  	this.setState({input: ''})
+  }
 
   render() {
     return (
@@ -27,4 +32,4 @@ class Add extends React.Component {
   }
 }
 
-export default Add
+export default connect(null, {addTodo})(Add)

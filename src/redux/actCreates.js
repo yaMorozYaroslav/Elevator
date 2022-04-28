@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO} from "./actCreates";
+import { ADD_TODO, TOGGLE_TODO} from "./consts";
 
 let nextTodoId = 0;
 

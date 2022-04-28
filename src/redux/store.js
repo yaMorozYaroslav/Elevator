@@ -1,5 +1,9 @@
-import { createStore} from "redux"
+import { configureStore} from "@reduxjs/toolkit"
 
-import rootReducer from "./sideSlice"
+import todosReducer from "./sideSlice"
 
-export default createStore(rootReducer)
+export default configureStore({
+	reducer: {
+		todos: todosReducer
+	}
+})
