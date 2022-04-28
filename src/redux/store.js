@@ -1,4 +1,5 @@
-import { combineReducers } from "redux"
-import todos from "./sideSlice"
+import { createStore} from "redux"
 
-export default combineReducers({ todos})
+import rootReducer from "./sideSlice"
+
+export default createStore(rootReducer)
