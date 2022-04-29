@@ -15,7 +15,7 @@ const List = () => {
  React.useEffect(()=>{
  
   dispatch(getElvs())
- },[dispatch, place])
+ },[dispatch])
 
   return(<ul>
     {sides && sides.length
