@@ -1,11 +1,11 @@
 import React from "react"
 import {connect} from 'react-redux'
 
-const Todo = ({ todo }) => (
+const Todo = ({ side }) => (
  
   <li>
       <span>
-      {todo.content}
+      {side.id}&{side.floor}
     </span>
   </li>
 );

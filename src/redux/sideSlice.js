@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+import {getElvs} from './actCreates'
 
 const initialState = {
   sides: [],
@@ -9,11 +10,21 @@ const sideSlice = createSlice({
   name: 'sides',
   initialState,
   reducers:{},
-
+ extraReducers(builder){
+  builder
+     .addCase(getElvs.pending, (state, action)=>{
+      state.status = 'loading'
+     })
+     .addCase(getElvs.fulfilled, (state, action)=>{
+      state.status = 'succeeded'
+      state.sides = []
+      state.sides = state.sides.concat(action.payload)
+     })
+     .addCase(getElvs.rejected, (state, action)=>{
+      state.status = 'failed'
+      state.error = action.error.message
+     })
+ }
 })
 export default sideSlice.reducer
 
-export const selectAllSides = state => state.sides.sides
-
-export const selectSideById =(state, sideId)=>
-             state.sides.sides.find(side => side.id === sideId)

@@ -1,7 +1,7 @@
 import React from "react"
 import {connect} from 'react-redux'
 import {useDispatch} from 'react-redux'
-import {addTodo} from '../redux/actCreates'
+import {moveFirst} from '../redux/actCreates'
 
 const Add =(props)=> {
   const dispatch = useDispatch()
@@ -10,7 +10,7 @@ const Add =(props)=> {
  const onInput =e=> setInput(e.target.value)
  const onSave =()=> {
   if(input){
-    dispatch(addTodo(input))
+    dispatch(moveFirst())
     setInput('')
   }
  }

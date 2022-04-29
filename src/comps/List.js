@@ -9,10 +9,14 @@ const List = () => {
   const dispatch = useDispatch()
   const sides = useSelector(selectAllSides)
 
-  return(<ul className="todo-list">
+ React.useEffect(()=>{
+  dispatch(getElvs())
+ },[dispatch])
+
+  return(<ul>
     {sides && sides.length
       ? sides.map((side, index) => {
-          return <Side key={`side-${side.id}`} side={side} />;
+          return <Side key={side.id} side={side} />;
         })
       : "No elevators, yay!"}
   </ul>)
