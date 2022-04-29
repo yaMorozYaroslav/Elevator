@@ -1,17 +1,23 @@
 import React from "react";
 import {connect} from 'react-redux'
-import {getTodos, selectAllSides} from '../redux/selectors'
+import {getTodos, selectAllSides, selectStatus} from '../redux/selectors'
 import Side from "./Side";
 import {useSelector, useDispatch} from 'react-redux'
 import {getElvs} from '../redux/actCreates'
-
+import {fetchElvs} from '../api'
 const List = () => {
   const dispatch = useDispatch()
   const sides = useSelector(selectAllSides)
-
+  //const status = useSelector(state => state.sides.status)
+  const status = useSelector(selectStatus)
+  const [place, setData] = React.useState([])
  React.useEffect(()=>{
-  dispatch(getElvs())
- },[sides, dispatch])
+  fetchElvs().then(data=>setData(data))
+ }, [place])
+ React.useEffect(()=>{
+  if(status==='stopped'){
+  dispatch(getElvs())}
+ },[dispatch, status])
 
   return(<ul>
     {sides && sides.length
@@ -21,8 +27,5 @@ const List = () => {
       : "No elevators, yay!"}
   </ul>)
 }
-const mapState = state => ({
-  sides: state.sides
-})
 
-export default connect(mapState, {getElvs})(List)
+export default List
