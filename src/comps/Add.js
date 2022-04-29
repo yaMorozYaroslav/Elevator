@@ -12,7 +12,7 @@ const Add =(props)=> {
     return (
       <div>
         <button onClick={onZero}>
-          Add Todo
+          Move Elevator
         </button>
       </div>
     );
