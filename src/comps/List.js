@@ -1,16 +1,21 @@
 import React from "react";
 import {connect} from 'react-redux'
-import {getTodos} from '../redux/selectors'
+import {getTodos, selectAllSides} from '../redux/selectors'
 import Side from "./Side";
+import {useSelector, useDispatch} from 'react-redux'
+import {getElvs} from '../redux/actCreates'
 
-const List = ({ todos }) => (
-  <ul className="todo-list">
-    {todos && todos.length
-      ? todos.map((todo, index) => {
-          return <Side key={`todo-${todo.id}`} todo={todo} />;
+const List = () => {
+  const dispatch = useDispatch()
+  const sides = useSelector(selectAllSides)
+
+  return(<ul className="todo-list">
+    {sides && sides.length
+      ? sides.map((side, index) => {
+          return <Side key={`side-${side.id}`} side={side} />;
         })
-      : "No todos, yay!"}
-  </ul>
-);
+      : "No elevators, yay!"}
+  </ul>)
+}
 
-export default connect(state=>({todos: getTodos(state) }))(List)
+export default connect(null, {getElvs})(List)

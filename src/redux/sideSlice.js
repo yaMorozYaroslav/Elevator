@@ -1,28 +1,19 @@
-import { ADD_TODO, GET_ELVS} from "./consts";
+import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
-  allIds: [],
-  byIds: {}
-};
-
-export default function(state = initialState, action) {
-  switch (action.type) {
-    case ADD_TODO: {
-      const { id, content } = action.payload;
-      return {
-        ...state,
-        allIds: [...state.allIds, id],
-        byIds: {
-          ...state.byIds,
-          [id]: {
-            content,
-            completed: false
-          }
-        }
-      };
-    }
-    case GET_ELVS: {
-      
-  }
- }
+  sides: [],
+  status: 'idle',
+  error: null
 }
+const sideSlice = createSlice({
+  name: 'sides',
+  initialState,
+  reducers:{},
+
+})
+export default sideSlice.reducer
+
+export const selectAllSides = state => state.sides.sides
+
+export const selectSideById =(state, sideId)=>
+             state.sides.sides.find(side => side.id === sideId)
