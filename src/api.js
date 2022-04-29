@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url ='https://back-elevators.herokuapp.com/elevators'
+const url ='https://back-elevators.herokuapp.com'
 
-export const fetchElvs =()=> axios.get(url)
-export const moveFirst =()=> axios.put(`${url}/floor/1`)
+export const fetchElvs =()=> axios.get(`${url}/elevators`)
+export const moveFirst =()=> axios.put(`${url}/floor/6`)

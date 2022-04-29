@@ -11,7 +11,7 @@ const List = () => {
 
  React.useEffect(()=>{
   dispatch(getElvs())
- },[dispatch])
+ },[sides, dispatch])
 
   return(<ul>
     {sides && sides.length
@@ -21,5 +21,8 @@ const List = () => {
       : "No elevators, yay!"}
   </ul>)
 }
+const mapState = state => ({
+  sides: state.sides
+})
 
-export default connect(null, {getElvs})(List)
+export default connect(mapState, {getElvs})(List)
