@@ -13,4 +13,5 @@ export const selectAllSides = state => state.sides.sides
 
 export const selectSideById =(state, sideId)=>
              state.sides.sides.find(side => side.id === sideId)
-export const selectStatus = state => state.sides.sides.status
+export const statusOfFirst = state => 
+                    state.sides.sides.find(side=>side.id === 0)

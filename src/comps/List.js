@@ -1,23 +1,22 @@
 import React from "react";
 import {connect} from 'react-redux'
-import {getTodos, selectAllSides, selectStatus} from '../redux/selectors'
+import {getTodos, selectAllSides, statusOfFirst} from '../redux/selectors'
 import Side from "./Side";
-import {useSelector, useDispatch} from 'react-redux'
+import {useSelector, useDispatch, shallowEqual} from 'react-redux'
 import {getElvs} from '../redux/actCreates'
 import {fetchElvs} from '../api'
 const List = () => {
   const dispatch = useDispatch()
   const sides = useSelector(selectAllSides)
-  //const status = useSelector(state => state.sides.status)
-  const status = useSelector(selectStatus)
+  const firstState = useSelector(statusOfFirst)
   const [place, setData] = React.useState([])
  React.useEffect(()=>{
   fetchElvs().then(data=>setData(data))
  }, [place])
  React.useEffect(()=>{
-  if(status==='stopped'){
+  if(firstState === 'moving'){
   dispatch(getElvs())}
- },[dispatch, status])
+ },[dispatch])
 
   return(<ul>
     {sides && sides.length
