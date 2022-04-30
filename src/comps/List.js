@@ -25,6 +25,11 @@ const List = () => {
       : "No elevators, yay!"}
   </ul>)
 }
-const mapStateToProps
+const mapStateToProps = state => {
+  const {sides} = state.todos || {}
+  const elvs = 
+        allIds && allIds.length
+           ?allIds.map(id => (byIds))
+}
 
 export default connect(null, {floorOne})(List)
