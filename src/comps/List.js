@@ -25,5 +25,6 @@ const List = () => {
       : "No elevators, yay!"}
   </ul>)
 }
+const mapStateToProps
 
 export default connect(null, {floorOne})(List)
