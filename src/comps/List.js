@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {getTodos, selectAllSides} from '../redux/selectors'
 import Side from "./Side";
 import {useSelector, useDispatch} from 'react-redux'
-import {getElvs} from '../redux/actCreates'
+import {getElvs, floorOne} from '../redux/actCreates'
 import {fetchElvs} from '../api'
 const List = () => {
   const dispatch = useDispatch()
@@ -26,4 +26,4 @@ const List = () => {
   </ul>)
 }
 
-export default List
+export default connect(null, {floorOne})(List)
