@@ -2,6 +2,7 @@ import React from 'react'
 import {Avatar, Button, Paper, Grid, Typography, Container, TextField} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import useStyles from './styles'
+import Input from './Input'
  const Auth =()=> {
 	const classes = useStyles()
 	const isSignup = false
@@ -21,20 +22,16 @@ import useStyles from './styles'
                      {
                      	isSignup && (
                               <>
-                    <Grid xs={6} md={12}>
                  <TextField 
                         name="firstName" 
                         label='First Name' 
                         handleChange={handleChange}
                         autoFocus xs={6}/>
-                    </Grid>
-                       <Grid xs={6} md={12}>
                  <TextField 
                         name="firstName" 
                         label='First Name' 
                         handleChange={handleChange}
                         autoFocus xs={6}/>
-                      </Grid>
                      </>
                       )
                      }
