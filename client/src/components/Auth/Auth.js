@@ -1,6 +1,8 @@
 import React from 'react'
 import {Avatar, Button, Paper, Grid, Typography, Container, TextField} from '@material-ui/core'
 import {GoogleLogin} from 'react-google-login'
+import {useDispatch} from 'react-redux'
+
 import Icon from './icon'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import useStyles from './styles'
@@ -10,13 +12,25 @@ import Input from './Input'
 	const classes = useStyles()
 	const [showPassword, setShowPassword] = React.useState(false)
     const [isSignup, setIsSignup] = React.useState(false)
+    const dispatch = useDispatch()
+
 	const handleShowPassword =()=> setShowPassword((prevShowPassword) => !prevShowPassword)
 	const handleSubmit =()=>{}
 	const handleChange =()=>{}
 	const switchMode =()=>{setIsSignup((prevIsSignup)=>!prevIsSignup)
                            handleShowPassword(false)}
-    const googleSuccess =async(res)=>{console.log(res)}
-    const googleFailure =()=>{console.log('Unsuccessful.')}
+    const googleSuccess =async(res)=>{
+    	const result = res?.profileObj
+        const token = res?.tokenId
+     try{
+        dispatch({type: 'AUTH', data: {result, token}})
+     }catch(error){
+     	console.log(error)
+     }
+    }
+    const googleFailure =(error)=>{
+        console.log(error)
+    	console.log('Unsuccessful.')}
 	return(
             <Container component="main" maxWidth="xs">
               <Paper className={classes.paper} elevation={3}>
