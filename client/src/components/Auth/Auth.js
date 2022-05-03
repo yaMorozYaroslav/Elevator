@@ -1,6 +1,7 @@
 import React from 'react'
 import {Avatar, Button, Paper, Grid, Typography, Container, TextField} from '@material-ui/core'
 import {GoogleLogin} from 'react-google-login'
+import Icon from './icon'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import useStyles from './styles'
 import Input from './Input'
@@ -14,6 +15,8 @@ import Input from './Input'
 	const handleChange =()=>{}
 	const switchMode =()=>{setIsSignup((prevIsSignup)=>!prevIsSignup)
                            handleShowPassword(false)}
+    const googleSuccess =async(res)=>{console.log(res)}
+    const googleFailure =()=>{console.log('Unsuccessful.')}
 	return(
             <Container component="main" maxWidth="xs">
               <Paper className={classes.paper} elevation={3}>
@@ -57,8 +60,17 @@ import Input from './Input'
                                type="password" />
                         }
                   </Grid>
+                  
+                  <Button
+                         type="submit" 
+                         fullWidth
+                         variant="contained"
+                         color="primary"
+                         className={classes.submit}>
+                    {isSignup? 'Sign Up': 'Sign In'}
+                  </Button>
                   <GoogleLogin 
-                               clientId="GOOGLE_ID"
+                               clientId="432974885424-2h18r3bse2rf5q0u8qcrljbaghbdem2j.apps.googleusercontent.com"
                                render={(renderProps)=>(
                                    <Button
                                             className={classes.googleButton}
@@ -68,17 +80,14 @@ import Input from './Input'
                                             disabled={renderProps.dispabled}
                                             startIcon={<Icon/>}
                                             variant="contained"
-                                            ></Button>
-                               	)}  />
-                  <Button
-                         type="submit" 
-                         fullWidth
-                         variant="contained"
-                         color="primary"
-                         className={classes.submit}>
-                    {isSignup? 'Sign Up': 'Sign In'}
-                  </Button>
-                  <Grid container justify="flex-end">
+                                            >Google Sign In</Button>
+                               	)} 
+                                onSuccess={googleSuccess}
+                                onFailure={googleFailure}
+                                cookiePolicy="single_host_origin"
+                               	 />
+                                
+                  <Grid container justifyContent="flex-end">
                            <Grid item>
                               <Button onClick={switchMode}>
                                {isSignup?"Do you have an account?":"Don't have an account?"}
