@@ -8,7 +8,7 @@ import Icon from './icon'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import useStyles from './styles'
 import Input from './Input'
-import {signin, signup} from '../../action/authact'
+import {signin, signup} from '../../actions/authact'
 
 const initialState =
   {firstName: '', lastName: '', email: '', password: '', confirmPassword:''}
