@@ -1,7 +1,8 @@
 import React from 'react'
-import {Avatar, Button, Paper, Grid, Typography, Container, TextField} from '@material-ui/core'
+import {Avatar, Button, Paper, Grid, Typography, Container} from '@material-ui/core'
 import {GoogleLogin} from 'react-google-login'
 import {useDispatch} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 
 import Icon from './icon'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
@@ -13,6 +14,7 @@ import Input from './Input'
 	const [showPassword, setShowPassword] = React.useState(false)
     const [isSignup, setIsSignup] = React.useState(false)
     const dispatch = useDispatch()
+    const navigate = useNavigate() 
 
 	const handleShowPassword =()=> setShowPassword((prevShowPassword) => !prevShowPassword)
 	const handleSubmit =()=>{}
@@ -24,6 +26,7 @@ import Input from './Input'
         const token = res?.tokenId
      try{
         dispatch({type: 'AUTH', data: {result, token}})
+        navigate('/')
      }catch(error){
      	console.log(error)
      }
