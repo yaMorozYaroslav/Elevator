@@ -15,6 +15,7 @@ export const Form =({currentId, setCurrentId})=>{
 		  currentId?state.posts.find((p)=>p._id===currentId):null)
     const classes = useStyles()
     const dispatch = useDispatch()
+    const user = JSON.parse(localStorage.getItem(`profile`))
 
     React.useEffect(()=>{
     	if(post) setPostData(post)
@@ -30,10 +31,11 @@ export const Form =({currentId, setCurrentId})=>{
        e.preventDefault()
 
        if(currentId === 0){
-          dispatch(createPost({...postData}))
+          dispatch(createPost({...postData, user?.result?.name}))
           clear()
-       }else{ dispatch(updatePost(currentId, postData))}
-         clear()
+       }else{ 
+       	  dispatch(updatePost(currentId, postData))}
+          clear()
       }
 
 
