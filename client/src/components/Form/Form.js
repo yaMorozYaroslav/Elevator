@@ -9,8 +9,8 @@ import {createPost, updatePost} from '../../actions/postact'
 
 export const Form =({currentId, setCurrentId})=>{
 	const [postData, setPostData] = React.useState({
- creator: '', title: '', message: '', tags: '', selectedFile: ''
-	                                          })
+	        title: '', message: '', tags: '', selectedFile: ''})
+
 	const post = useSelector((state)=>
 		  currentId?state.posts.find((p)=>p._id===currentId):null)
     const classes = useStyles()
@@ -19,20 +19,24 @@ export const Form =({currentId, setCurrentId})=>{
     React.useEffect(()=>{
     	if(post) setPostData(post)
     }, [post])
-   
-	const handleSubmit =(e)=>{
-       e.preventDefault()
-       if(currentId){
-           dispatch(updatePost(currentId, postData))
-       }else{dispatch(createPost(postData))}
-         clear()
-      }
-
-const clear =()=>{
+    
+    const clear =()=>{
      setCurrentId(null)
      setPostData({ title: '', message: '', tags: '', selectedFile:''})
 
 	}
+
+	const handleSubmit =(e)=>{
+       e.preventDefault()
+
+       if(currentId === 0){
+          dispatch(createPost({...postData}))
+          clear()
+       }else{ dispatch(updatePost(currentId, postData))}
+         clear()
+      }
+
+
 	return(
        <Paper className={classes.paper}>
          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
