@@ -30,16 +30,14 @@ export const Form =({currentId, setCurrentId})=>{
 
 const clear =()=>{
      setCurrentId(null)
-     setPostData({creator: '', title: '',
-                  message: '', tags: '', selectedFile:''})
+     setPostData({ title: '', message: '', tags: '', selectedFile:''})
 
 	}
 	return(
        <Paper className={classes.paper}>
          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
 		   <Typography variant="h6">{!currentId?'Creating':'Editing'} a memory</Typography>
-		   <TextField name="creator" variant="outlined" label="Creator" 
-		              fullWidth value={postData.creator}
+		   
     onChange={(e)=>setPostData({...postData,creator: e.target.value})}/>
            <TextField name="title" variant="outlined" label="Title" 
 		              fullWidth value={postData.title}
