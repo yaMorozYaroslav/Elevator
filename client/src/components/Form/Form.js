@@ -31,7 +31,7 @@ export const Form =({currentId, setCurrentId})=>{
        e.preventDefault()
 
        if(currentId === 0){
-          dispatch(createPost({...postData, user?.result?.name}))
+          dispatch(createPost({...postData, name: user?.result?.name}))
           clear()
        }else{ 
        	  dispatch(updatePost(currentId, postData))}
