@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container, Grow, Grid} from '@material-ui/core'
 import {Posts} from '../Posts/Posts'
-import {Form} from '../Form/Form'
+import Form from '../Form/Form'
 import {getPosts} from '../../actions/postact'
 import {useDispatch} from 'react-redux'
 import useStyles from '../Posts/styles'
@@ -13,7 +13,7 @@ const Home =()=> {
 
     React.useEffect(()=>{
         dispatch(getPosts())
-    }, [currentId, dispatch])
+    }, [dispatch])
 	return(
 	 <Grow in>
          <Container>

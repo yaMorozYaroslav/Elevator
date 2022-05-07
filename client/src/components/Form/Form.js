@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {TextField, Button, Typography, Paper} from '@material-ui/core'
 import FileBase from 'react-file-base64'
 
@@ -7,7 +8,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import useStyles from './styles'
 import {createPost, updatePost} from '../../actions/postact'
 
-export const Form =({currentId, setCurrentId})=>{
+const Form =({currentId, setCurrentId})=>{
 	const [postData, setPostData] = React.useState({
 	        title: '', message: '', tags: '', selectedFile: ''})
 
@@ -51,7 +52,7 @@ export const Form =({currentId, setCurrentId})=>{
 	return(
        <Paper className={classes.paper}>
          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-		   <Typography variant="h6">{!currentId?'Creating':'Editing'} a memory</Typography>
+		   <Typography variant="h6">{!currentId?'Creating':'Editing'} a request</Typography>
            <TextField name="title" variant="outlined" label="Title" 
 		              fullWidth value={postData.title}
     onChange={(e)=>setPostData({...postData,title: e.target.value})}/>
@@ -81,3 +82,4 @@ export const Form =({currentId, setCurrentId})=>{
 	   </Paper>
 		)
 }
+export default connect(null, {Form})(Form)

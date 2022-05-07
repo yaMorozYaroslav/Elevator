@@ -2,6 +2,7 @@ import React from 'react'
 import {Link, useNavigate, useLocation} from 'react-router-dom'
 import { AppBar, Typography, Button, Toolbar, Avatar} from '@material-ui/core'
 import {useDispatch} from 'react-redux'
+import decode from 'jwt-decode'
 import memories from '../../images/memories.png'
 import useStyles from './styles'
 
@@ -14,13 +15,18 @@ const Navbar =()=>{
   const location = useLocation()
   const logout =()=>{
     dispatch({type: 'LOGOUT'})
-    navigate('/')
+    navigate(0)
     setUser(null)
   }
 
 
   React.useEffect(()=>{
-    //const token = user?.token
+    const token = user?.token
+    if(token){
+      const decodedToken = decode(token)
+      if(decodedToken.exp * 1000 < new Date().getTime()) logout()
+    }
+
     setUser(JSON.parse(localStorage.getItem('profile')))
   }, [location])
   return(
@@ -33,7 +39,7 @@ const Navbar =()=>{
              element={Link} to="/"
              className={classes.heading}
              variant="h2" 
-             align="center"> Memories
+             align="center"> Requests
           </Typography>
            <img
                className={classes.image}
