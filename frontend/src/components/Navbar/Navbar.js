@@ -20,7 +20,7 @@ const Navbar =()=>{
   }
 
 
-  React.useEffect(()=>{
+  React.useEffect((user, logout)=>{
     const token = user?.token
     if(token){
       const decodedToken = decode(token)
