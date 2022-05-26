@@ -20,15 +20,19 @@ const Navbar =()=>{
   }
 
 
-  React.useEffect((user, logout)=>{
+  React.useEffect(()=>{
     const token = user?.token
     if(token){
       const decodedToken = decode(token)
-      if(decodedToken.exp * 1000 < new Date().getTime()) logout()
+      if(decodedToken.exp * 1000 < new Date().getTime()){
+        dispatch({type: 'LOGOUT'})
+        navigate(0)
+        setUser(null)
+      }
     }
 
     setUser(JSON.parse(localStorage.getItem('profile')))
-  }, [location])
+  }, [location, dispatch, navigate, user?.token])
   return(
    <AppBar 
           className={classes.appBar}
