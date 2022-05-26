@@ -1,1 +1,1 @@
-const achievement = "I can create second branch to develop even better."
+const achievement = "I can have second branch to develop even better."
