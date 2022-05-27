@@ -1,2 +1,2 @@
-const achievement = "I completely got the idea."
-const someInfo = "And have it separately."
+const achievement = "I completely got this idea."
+const someInfo = "And it's possible to have updates separately."
