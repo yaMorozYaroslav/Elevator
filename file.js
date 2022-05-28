@@ -1,0 +1,1 @@
+const mistery = 'I have two different projects. How it counts commits?'
