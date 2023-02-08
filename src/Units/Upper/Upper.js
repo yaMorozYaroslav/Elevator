@@ -1,6 +1,5 @@
 import React from 'react'
-import {Box, Text} from './Upper.styled.js'
-import styled from 'styled-components'
+import {Box, Text, Button} from './Upper.styled.js'
 
 export function Upper(){
 	const [state, setState] = React.useState({click0: 0, click1: 0})
@@ -19,9 +18,9 @@ export function Upper(){
 	<>
 	<Box state={state}/>
 	
-	<Text state={state}>{state.click0 === 1  ? 'blue box': null}
-	    {state.click1 === 1  ? 'grey box': null}
-	    {state.click0 === 0 && state.click1 === 0 ? 'green box': null}
+	<Text state={state}>{state.click0 === 1  ? 'Blue Box': null}
+	    {state.click1 === 1  ? 'Grey Box': null}
+	    {state.click0 === 0 && state.click1 === 0 ? 'Green Box': null}
     </Text>
 		           
 	<Area disabled={state.click1 === 1}
@@ -37,10 +36,10 @@ export function Upper(){
 	}
 
 function Area({numb, disabled, onClick}){
-	return <button 
-	           style={{zIndex:'2', position:'relative'}} 
+
+	return <Button 
 	           onClick={onClick}
 	           disabled={disabled}
-	           >{numb}  </button>
+	           >{numb}  </Button>
 	           
 	}

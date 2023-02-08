@@ -6,6 +6,5 @@ export const App =()=> (
 
     <>
       <Upper/>
-      <h1>Hello world</h1>
     </>
     )
