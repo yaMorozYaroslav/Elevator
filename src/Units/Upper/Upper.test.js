@@ -1,11 +1,12 @@
 import {Upper} from './Upper'
 import '@testing-library/jest-dom'
-import {render, screen} from '@testing-library/react'
+import {render, screen, fireEvent} from '@testing-library/react'
 
 
-test('First button is diabled, when second one is active', () => {
-	const {getByTestId} = render(<Upper/>)
-	//expect(screen.getByTitle('firstButt')).toHaveAttribute('disabled')
-	expect(screen.getByTitle('firstButt')).toBe()
-	
-	})
+test('Displays two active buttons by default')
+test('Disables the first button when the second is active', () => {
+	render(<Upper/>)
+	fireEvent.click(screen.getByTitle('firstButt'))
+	expect(screen.getByTitle('secondButt'))
+	             .toHaveProperty('disabled', true)
+})
