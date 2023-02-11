@@ -12,6 +12,6 @@ test('shoud test what goes into the state', () => {
 	render(<Entity />)
 	const button = screen.getByTitle('Button')
 	act(() => fireEvent.click(button))
-	expect(setState).toHaveBeenCalledWith(expect.objectContaining({'blick':1}))
+	expect(setState).toHaveBeenCalledWith(expect.objectContaining({'click0': 1}))
 	
 	})

@@ -1,7 +1,19 @@
 import React from 'react'
 
 export function Entity(){
-   const [click, setClick] = React.useState({click: 0, blick: 0})
-   return <button title='Button' onClick={()=>setClick({...click, click: 1})}>
-                                     {click?'click':'noClick'}</button>
+   const [clicks, setClick] = React.useState({click0: 0, click1: 0})
+   
+   const handleChange0 = () => {clicks.click0===0
+		                     ?setClick(clicks => ({...clicks, click0: 1}))
+		                     :setClick(clicks => ({...clicks, click0: 0}))
+							 }
+   const handleChange1 = () => {clicks.click1===0
+		                     ?setClick(clicks => ({...clicks, click1: 1}))
+		                     :setClick(clicks => ({...clicks, click1: 0}))
+							 }
+   
+   return <button title='Button'
+                  onClick={()=>setClick({...clicks, click0: 1})}>
+                  
+           {clicks?'click':'noClick'}</button>
 	}
