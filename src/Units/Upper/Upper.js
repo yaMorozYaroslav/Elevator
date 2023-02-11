@@ -17,11 +17,10 @@ export function Upper(){
 		                     :setState(state => ({...state, click1: 0}))
 							 }
 	console.log(state)
-	console.log(props=>props.state)
 	
 	return  (
 	<>
-	<Box state={state}/>
+	<Box title='ColorBox' state={state}/>
 	
 	<Text state={state}>
 	    {state.click0 === 1  ? 'Blue Box': null}
@@ -29,13 +28,13 @@ export function Upper(){
 	    {state.click0 === 0 && state.click1 === 0 ? 'Green Box': null}
     </Text>
 		           
-	<Area title='firstButt' 
+	<Area title='FirstButt' 
 	      disabled={state.click1 === 1}
 	      numb={state.click0}
 	      onClick={handleChange0}
 	      onDoubleClick={null}/>
 	      
-	<Area title='secondButt'
+	<Area title='SecondButt'
 	      disabled={state.click0 === 1}
 	      numb={state.click1}  
 	      onClick={handleChange1}/>
