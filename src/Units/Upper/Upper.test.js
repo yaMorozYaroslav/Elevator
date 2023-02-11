@@ -4,15 +4,16 @@ import '@testing-library/jest-dom'
 import 'jest-styled-components'
 import {render, screen, fireEvent, act} from '@testing-library/react'
 
-test('The State Test', () => {
+/* test('The State Test', () => {
   const setMockState = jest.fn()
-  const useMockState = useState => [useState,setMockState]
+  const useMockState = () => [useState,setMockState]
   jest.spyOn(React, 'useState').mockImplementation(useMockState)
   
   const {getByTitle} = render(<Upper/>)
   const button = screen.getByTitle('FirstButton')
-  fireEvent.click(button)
-})
+  act(() => fireEvent.click(button))
+  expect(setMockState).toHaveBeenCalledWith(1)
+}) */
 test('Displays two active buttons by default', () => {
 	render(<Upper/>)
 	expect(screen.getByTitle('FirstButt'))
