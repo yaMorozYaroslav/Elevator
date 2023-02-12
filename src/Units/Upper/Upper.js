@@ -3,7 +3,7 @@ import {Box, Text, Button} from './Upper.styled.js'
  
 export function Upper(){
 	
-	 const initialState = {click0: 0, click1: 0}
+   const initialState = {click0: 0, click1: 0}
    const [state, setState] = React.useState(initialState)
    
    const handleChange0 = () => {state.click0===0

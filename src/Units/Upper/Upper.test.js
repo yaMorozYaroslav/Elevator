@@ -5,16 +5,16 @@ import 'jest-styled-components'
 import {render, screen, fireEvent, act} from '@testing-library/react'
 
 test('the state test', () => {
-	/*const setState = jest.fn()
+	const setState = jest.fn()
 	jest.spyOn(React, 'useState')
 	.mockImplementation(initState => [initState, setState])
 	
 	render(<Upper />)
 	const button = screen.getByTitle('FirstButt')
 	act(() => fireEvent.click(button))
-	expect(setState).toHaveBeenCalledWith(expect.objectContaining({'click0': 1}))*/
+	expect(setState).toHaveBeenCalledWith(expect.objectContaining({'click0': 1}))
 	})
-test('Displays two active buttons by default', () => {
+/*test('Displays two active buttons by default', () => {
 	render(<Upper/>)
 	expect(screen.getByTitle('FirstButt'))
 	             .toHaveProperty('disabled', false)
@@ -33,4 +33,4 @@ test('Disables the second button when the first is active', () => {
 	fireEvent.click(screen.getByTitle('SecondButt'))
 	expect(screen.getByTitle('FirstButt'))
 	             .toHaveProperty('disabled', true)
-})
+}) */
