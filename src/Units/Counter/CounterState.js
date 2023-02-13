@@ -1,13 +1,15 @@
 import React from 'react'
 
 export function CounterState(){
-	const [count, setCount] = React.useState(0)
+	const [state, setState] = React.useState({count:0,word:null})
 	
 	const increment = () => {
-		  setCount(count + 1)
+		  setState({...state, count: state.count + 1})
 		}
 	const decrement = () => {
-		  setCount(count - 1)
+		  setState({...state,
+			        count: state.count - 1,
+			        word: 'decrement'})
 		}
-	return {count, increment, decrement}
+	return {state, increment, decrement}
 	}
