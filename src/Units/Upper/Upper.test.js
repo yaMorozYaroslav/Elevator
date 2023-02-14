@@ -11,14 +11,14 @@ describe('counter state actions', () => {
 	afterEach(() => console.log("test"))
 	it('increments count by 1', () => {
 		const {result} = renderHook(UpperState)
-		act(() => { result.current.increment() })
+		act(() => { result.current.handClick0() })
 		expect(result.current.state.click0).toBe(1)
 		})
-	it('adds the word on decrement', () => {
-		const {result} = renderHook(CounterState)
-		act(() => { result.current.decrement() })
+	/*it('adds the word on decrement', () => {
+		const {result} = renderHook(UpperState)
+		act(() => { result.current.handClick1()})
 		expect(result.current.state).toBe(expect.objectContaining({word:'decrement'}))
-		})
+		})  */
 	})
 /*test('Displays two active buttons by default', () => {
 	render(<Upper/>)

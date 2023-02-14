@@ -10,6 +10,6 @@ describe('counter state actions', () => {
 	it('adds the word on decrement', () => {
 		const {result} = renderHook(CounterState)
 		act(() => { result.current.decrement() })
-		expect(result.current.state).toHaveBeenCalledWith(expect.objectContaining({word:'decrement'}))
+		expect(result.current.state).toEqual(expect.objectContaining({word:'decrement'}))
 		})
 	})
