@@ -1,18 +1,24 @@
 import React from 'react'
 import {Upper} from './Upper'
+import {UpperState} from './UpperState'
 import '@testing-library/jest-dom'
 import 'jest-styled-components'
-import {render, screen, fireEvent, act} from '@testing-library/react'
+import {render, screen, fireEvent, 
+	               act, renderHook} from '@testing-library/react'
 
-test('the state test', () => {
-	const setState = jest.fn()
-	jest.spyOn(React, 'useState')
-	.mockImplementation(initState => [initState, setState])
-	
-	render(<Upper />)
-	const button = screen.getByTitle('FirstButt')
-	act(() => fireEvent.click(button))
-	expect(setState).toHaveBeenCalledWith(expect.objectContaining({'click0': 1}))
+
+describe('counter state actions', () => {
+	afterEach(() => console.log("test"))
+	it('increments count by 1', () => {
+		const {result} = renderHook(UpperState)
+		act(() => { result.current.increment() })
+		expect(result.current.state.click0).toBe(1)
+		})
+	it('adds the word on decrement', () => {
+		const {result} = renderHook(CounterState)
+		act(() => { result.current.decrement() })
+		expect(result.current.state).toBe(expect.objectContaining({word:'decrement'}))
+		})
 	})
 /*test('Displays two active buttons by default', () => {
 	render(<Upper/>)

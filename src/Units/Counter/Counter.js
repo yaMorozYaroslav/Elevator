@@ -2,11 +2,11 @@ import React from 'react'
 import {CounterState} from './CounterState'
 
 export function Counter(){
-	const {count, increment, decrement} = CounterState()
+	const {state, increment, decrement} = CounterState()
 	
 	return(
 	<>
-	  <p>{count}</p>
+	  <p>{state.count}</p>
 	  <button onClick={increment}>Increment</button>
 	  <button onClick={decrement}>Decrement</button>
 	</>
