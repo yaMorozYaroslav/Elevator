@@ -7,7 +7,12 @@ describe('counter state actions', () => {
 		act(() => { result.current.increment() })
 		expect(result.current.state.count).toBe(1)
 		})
-	it('adds the word on decrement', () => {
+	it('decrements count by 1', () => {
+		const {result} = renderHook(CounterState)
+		act(() => { result.current.decrement() })
+		expect(result.current.state.count).toBe(0)
+		})
+	it('adds a word when decremented', () => {
 		const {result} = renderHook(CounterState)
 		act(() => { result.current.decrement() })
 		expect(result.current.state).toEqual(expect.objectContaining({word:'decrement'}))
