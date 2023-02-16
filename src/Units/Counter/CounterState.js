@@ -11,7 +11,7 @@ export function CounterState(){
                      :state.count.concat(+lastChar + +1)
     const newDecCount = state.count.length > 10
                         ?state.count.slice(0, state.count.length - 2)
-                        :state.count.replace(lastChar,'')
+                        :state.count.slice(0, state.count.length - 1)
 	const increment = () => {
 		  setState({...state, count: newIncCount })
 		}

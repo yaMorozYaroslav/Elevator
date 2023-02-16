@@ -7,20 +7,22 @@ import {render, screen, fireEvent,
 	               act, renderHook} from '@testing-library/react'
 
 
-describe('counter state actions', () => {
+describe('Counter State Test', () => {
 	afterEach(() => console.log("test"))
-	it('increments count by 1', () => {
+	it('increments state.click0 by 1', () => {
 		const {result} = renderHook(UpperState)
 		act(() => { result.current.handClick0() })
 		expect(result.current.state.click0).toBe(1)
 		})
-	/*it('adds the word on decrement', () => {
+	it('increments state.click1 by 1', () => {
 		const {result} = renderHook(UpperState)
 		act(() => { result.current.handClick1()})
-		expect(result.current.state).toBe(expect.objectContaining({word:'decrement'}))
-		})  */
+		expect(result.current.state).toEqual(expect.objectContaining({click1:1}))
+		})  
 	})
-/*test('Displays two active buttons by default', () => {
+
+describe('Counter UI Test', () => {
+test('Displays two active buttons by default', () => {
 	render(<Upper/>)
 	expect(screen.getByTitle('FirstButt'))
 	             .toHaveProperty('disabled', false)
@@ -39,4 +41,5 @@ test('Disables the second button when the first is active', () => {
 	fireEvent.click(screen.getByTitle('SecondButt'))
 	expect(screen.getByTitle('FirstButt'))
 	             .toHaveProperty('disabled', true)
-}) */
+}) 
+})
