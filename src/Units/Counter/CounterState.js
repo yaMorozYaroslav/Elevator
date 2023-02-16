@@ -3,14 +3,21 @@ import React from 'react'
 export function CounterState(){
 	const [state, setState] = React.useState({count:'0',word:null})
 	
-	const lastChar = state.count.substr(state.count.length - 1)
-	console.log(lastChar)
+	const lastChar = state.count.substring(state.count.length - 1)
+	const lastTwo = state.count.substring(state.count.length - 2, state.count.length)
+	
+    const newIncCount = state.count.length > 10
+                     ?state.count.concat(+lastTwo + +1)
+                     :state.count.concat(+lastChar + +1)
+    const newDecCount = state.count.length > 10
+                        ?state.count.slice(0, state.count.length - 2)
+                        :state.count.replace(lastChar,'')
 	const increment = () => {
-		  setState({...state, count: lastChar.concat( + 1)})
+		  setState({...state, count: newIncCount })
 		}
 	const decrement = () => {
 		  setState({...state,
-			        count: state.count - 1,
+			        count: newDecCount ,
 			        word: 'decrement'})
 		}
 	return {state, increment, decrement}
