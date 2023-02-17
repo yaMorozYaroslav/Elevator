@@ -3,20 +3,24 @@ import {CounterState} from './CounterState'
 import random from 'randomcolor'
 import styled from 'styled-components'
 
+const Paragraph = styled.p`
+	  background: ${props => props.change ? props.random : props.random};
+	`
+
 export function Counter(){
-	const color = random()
-	console.log(color)
+	
+	
 	const {state, increment, decrement} = CounterState()
 	const [paint, setPaint] = React.useState('')
 	//const onChange = () => {state.change?setPaint(color):setPaint(color)}
-	
-	//function Parag(
-	const Paragraph = styled.p`
-	  color: ${color};
-	`
+	console.log(state.change)
+	React.useEffect(()=>{
+		 const color = random()
+		 setPaint(color)
+		},[state.change])
 	return(
 	<>
-	  <Paragraph>{state.count}</Paragraph>
+	  <Paragraph change={state.change} random={paint}>{state.count}</Paragraph>
 	  <button onClick={increment}>Increment</button>
 	  <button onClick={decrement}>Decrement</button>
 	</>

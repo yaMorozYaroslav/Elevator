@@ -13,8 +13,7 @@ export function CounterState(){
                         ?state.count.slice(0, state.count.length - 2)
                         :state.count.slice(0, state.count.length - 1)
 	const increment = () => {
-		  setState({...state, change: !state.change})
-		  setState({...state, count: newIncCount })
+		  setState({...state, count: newIncCount, change: !state.change })
 		}
 	const decrement = () => {
 		  setState({...state,
