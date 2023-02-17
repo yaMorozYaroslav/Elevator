@@ -1,12 +1,18 @@
 import React from 'react'
 import {CounterState} from './CounterState'
+import random from 'randomcolor'
 import styled from 'styled-components'
+
 export function Counter(){
+	const color = random()
+	console.log(color)
 	const {state, increment, decrement} = CounterState()
-	const {change, setChange} = React.useState()
-	var randomColor = Math.floor(Math.random()*16777215).toString(16);
+	const [paint, setPaint] = React.useState('')
+	//const onChange = () => {state.change?setPaint(color):setPaint(color)}
+	
+	//function Parag(
 	const Paragraph = styled.p`
-	  color: ${change ? {randomColor} : {randomColor}};
+	  color: ${color};
 	`
 	return(
 	<>
