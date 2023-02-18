@@ -26,7 +26,9 @@ describe('counter state actions', () => {
 describe('elements on the screen', () => {
 	it('changes color on state change', () => {
 		render(<Counter/>)
-		expect(screen.getByTitle('Paragraph')).toHaveStyle('color:random')
+		//expect(screen.getByTitle('Paragraph')).toHaveStyle('color:random')
+		expect(screen.getByTitle('Count')).toHaveProperty('change','true')
+		
 		
 	  })
 	})

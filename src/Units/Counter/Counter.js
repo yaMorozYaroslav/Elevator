@@ -15,16 +15,17 @@ export function Counter(){
 	const [paint, setPaint] = React.useState('')
 	//const onChange = () => {state.change?setPaint(color):setPaint(color)}
 	console.log(state.change)
+	
+	const Count = ({title, change, random, count}) => 
+	  <Paragraph  title={title} change={change} random={random}>{count}</Paragraph>
+	
 	React.useEffect(()=>{
 		 const color = random()
 		 setPaint(color)
 		},[state.change])
 	return(
 	<>
-	  <Paragraph title='Paragraph'
-	             change={state.change}
-	             random={paint}
-	             >{state.count}</Paragraph>
+	  <Count title='Count' count={state.count} change={state.change} random={paint} ></Count>
 	  <button onClick={increment}>Increment</button>
 	  <button onClick={decrement}>Decrement</button>
 	</>
