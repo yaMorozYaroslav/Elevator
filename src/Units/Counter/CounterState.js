@@ -16,9 +16,7 @@ export function CounterState(){
 		  setState({...state, count: newIncCount, change: !state.change })
 		}
 	const decrement = () => {
-		  setState({...state,
-			        count: newDecCount ,
-			        word: 'decrement'})
+		  setState({...state, count: newDecCount , word: 'decrement'})
 		}
 	return {state, increment, decrement}
 	}

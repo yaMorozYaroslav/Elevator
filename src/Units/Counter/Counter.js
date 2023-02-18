@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 const Paragraph = styled.p`
 	  background: ${props => props.change ? props.random : props.random};
+	  font-size: 30px;
 	`
 
 export function Counter(){
@@ -20,7 +21,10 @@ export function Counter(){
 		},[state.change])
 	return(
 	<>
-	  <Paragraph change={state.change} random={paint}>{state.count}</Paragraph>
+	  <Paragraph title='Paragraph'
+	             change={state.change}
+	             random={paint}
+	             >{state.count}</Paragraph>
 	  <button onClick={increment}>Increment</button>
 	  <button onClick={decrement}>Decrement</button>
 	</>
